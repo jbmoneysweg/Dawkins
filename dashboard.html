@@ -1,0 +1,4134 @@
+﻿<html >
+<head>
+    <title>Dawkins Dashboard</title>
+    <link rel="icon" href="dawkinslogo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="dawkinslogo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title></title>
+    <style>
+        body {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('dawkinsbg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .form {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+        }
+
+        .form5 {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 17%;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+        }
+
+        .form6 {
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 85%;
+            padding: 20px;
+            padding-top: 20px;
+            margin-left: 20rem;
+            width: 90rem;
+            margin-top: 7rem;
+        }
+
+        .form8 {
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 85%;
+            padding: 20px;
+            padding-top: 20px;
+            margin-left: 20rem;
+            width: 90rem;
+            margin-top: 7rem;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .form6 {
+                height: 70%;
+                width: 90%;
+                margin-left: 5%;
+                margin-top: 30%;
+            }
+        }
+
+        .submit1 {
+            background-color: black;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 6%;
+            margin-top: 300px;
+            text-align: center;
+            width: 100%;
+        }
+
+            .submit1:hover {
+                opacity: .5;
+            }
+
+        .buttonClass {
+            background-color: white;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: black;
+            /*color: #eee;*/
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 5px 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+            .buttonClass:hover {
+                opacity: .5;
+            }
+
+        .timeClass {
+            display: inline-block;
+            background-color: white;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: black;
+            /*color: #eee;*/
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 5px 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+            .timeClass:hover {
+                opacity: .5;
+            }
+
+        .referClass {
+            display: inline-block;
+            background-color: white;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: black;
+            /*color: #eee;*/
+            cursor: pointer;
+            font-size: .8em;
+            padding: 5px 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+            .referClass:hover {
+                opacity: .5;
+            }
+
+        .buttonClass2 {
+            display: none;
+            background-color: white;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: black;
+            /*color: #eee;*/
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 5px 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+            .buttonClass2:hover {
+                opacity: .5;
+            }
+
+        .average {
+            border: 0;
+            box-sizing: border-box;
+            color: white;
+            /*color: #eee;*/
+            cursor: pointer;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+
+        .buttonClass3 {
+            display: none;
+            color: white;
+            /*color: #eee;*/
+            font-size: 1.2em;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+        .title {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        .title3 {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        .title2 {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .form2 {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 25%;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+            display: none;
+        }
+
+        .form3 {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 10%;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+            display: none;
+        }
+
+        #form {
+            display: none;
+        }
+
+        .input {
+            background-color: #303245;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            font-size: 18px;
+            height: 7%;
+            outline: 0;
+            padding: 4px 20px 0;
+            width: 100%;
+        }
+
+        .submit {
+            background-color: black;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 7%;
+            margin-top: 38px;
+            text-align: center;
+            width: 100%;
+        }
+
+            .submit:hover {
+                opacity: .5;
+            }
+
+        .input {
+            background-color: #303245;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            font-size: 18px;
+            height: 7%;
+            outline: 0;
+            padding: 4px 20px 0;
+            width: 100%;
+        }
+
+        .submit2 {
+            background-color: darkgoldenrod;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 10%;
+            text-align: center;
+            width: 100%;
+        }
+
+            .submit2:hover {
+                opacity: .5;
+            }
+
+        .input2 {
+            background-color: #303245;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            font-size: 18px;
+            height: 10%;
+            outline: 0;
+            padding: 4px 20px 0;
+            width: 100%;
+        }
+
+        .subtitle {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        #myChart {
+            display: none;
+            margin-top: 1vh;
+        }
+
+        .chart {
+            display: none;
+            z-index: 0;
+        }
+
+        #navHolder {
+            display: none;
+        }
+
+        #buttonss {
+            display: none;
+        }
+
+        #buttonsss {
+            display: none;
+        }
+
+        #buttonssss {
+            display: none;
+        }
+
+        #buttonss2 {
+            display: none;
+        }
+
+        #refersss2 {
+            display: none;
+        }
+
+        #pagess2 {
+            display: none;
+        }
+
+        #time2 {
+            display: none;
+        }
+
+        #refersss {
+            display: none;
+        }
+
+        #wrong {
+            display: none;
+        }
+
+        #navHolder {
+            /*text-align: center;*/
+            margin-top: 4.5em;
+        }
+
+        #time {
+            display: none;
+        }
+
+        #avg {
+            display: none;
+            margin-left: 8px;
+        }
+
+        .reports {
+            margin-top: 1.5em;
+            display: block;
+            /*text-align: center;*/
+            font-size: 1.8em;
+            color: white;
+            font-style: italic;
+            margin-left: 75px;
+        }
+
+        .sign-out {
+            float: right;
+            vertical-align: middle;
+            display: inline-block;
+            /*text-align: center;*/
+            font-size: 1.8em;
+            color: white;
+            font-style: italic;
+            margin-right: 70px;
+            margin-top: .3em;
+        }
+
+            .sign-out > a:hover {
+                /*background-color: lightcyan;*/
+                cursor: pointer;
+                color: grey !important;
+            }
+
+        .nav {
+            display: block;
+            /*text-align: center;*/
+            font-size: 1.4em;
+            color: grey;
+            margin-left: 75px;
+            margin-top: 25px;
+        }
+
+            .nav:hover {
+                /*background-color: lightcyan;*/
+                cursor: pointer;
+                color: gold !important;
+            }
+
+        .nav2 {
+            display: block;
+            /*text-align: center;*/
+            font-size: 1.4em;
+            color: grey;
+            margin-left: 75px;
+            margin-top: 25px;
+            /*background-color: white;*/
+        }
+
+            .nav2:hover {
+                /*background-color: lightcyan;*/
+                color: gold !important;
+                cursor: pointer;
+            }
+
+        #nav {
+            /* background-image: url('codedawkin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background-color: black;
+            width: 17%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: none;
+            padding-top: .5vh;
+            padding-bottom: .5vh;
+            z-index: 3;
+            height: 99vh;
+        }
+
+        #nav8 {
+            /* background-image: url('codedawkin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background-color: black;
+            width: 70%;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            display: none;
+            padding-top: 2%;
+            padding-bottom: 5%;
+            z-index: 3;
+            height: 96%;
+        }
+
+        #nav5 {
+            /* background-image: url('codedawkin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background-color: black;
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            padding-top: 3.5vh;
+            z-index: 3;
+            height: 5em
+        }
+
+        #nav3 {
+            /* background-image: url('codedawkin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background-color: black;
+            width: 100%;
+            height: 20vh;
+            display: none;
+            position: absolute;
+            top: 0px;
+            padding-top: 2vh;
+        }
+
+
+
+        #img {
+            text-align: right;
+            margin-top: 1.5vh;
+            margin-right: .4%;
+        }
+
+        #img2 {
+            text-align: center;
+            margin-top: 1.5vh;
+            margin-right: .4%;
+        }
+
+        #remove {
+            display: none;
+        }
+
+        #only {
+            display: none;
+        }
+
+        #onlys {
+            display: none;
+        }
+
+        .data {
+            color: white;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgb(122, 119, 119);
+        }
+
+        .dropdown-conten a:hover {
+            color: #999;
+        }
+
+        .dropdown:hover .dropdown-conten {
+            display: block;
+        }
+
+        .dropdown-conten a {
+            color: black;
+            padding: 10px 8px 10px 8px;
+            text-decoration: none;
+            display: block;
+            font-size: 13.7px;
+            background: transparent;
+        }
+
+        .dropdown-conten {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 30px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        #nav2 div {
+            height: 4px;
+            background-color: black;
+            margin: 5px 0;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        #nav2 {
+            width: 30px;
+            display: block;
+            margin: 0px 0px 0px 5px;
+        }
+
+            #nav2:hover div {
+                width: 30px;
+            }
+
+        .one {
+            background-color: white !important;
+            color: white;
+            width: 30px;
+        }
+
+        .two {
+            background-color: white !important;
+            width: 20px;
+        }
+
+        .three {
+            background-color: white !important;
+            width: 25px
+        }
+
+        .color {
+            background-color: rgb(122, 119, 119);
+        }
+
+        .g {
+            color: black;
+            margin-top: 3px;
+        }
+
+            .g:hover {
+                cursor: pointer;
+            }
+
+        #nav3 {
+            display: none;
+            z-index: 3;
+        }
+
+        .color {
+            display: inline-block;
+            background: transparent;
+            margin-left: 30px;
+            border-bottom-right-radius: 8px;
+            float: left;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .color {
+                display: inline-block;
+                background: transparent;
+                margin-right: 30px;
+                border-bottom-right-radius: 8px;
+                float: left;
+            }
+
+            body {
+                height: 105vh;
+            }
+        }
+
+        @media only screen and (max-height: 500px) {
+            #nav {
+                height: 121vh;
+            }
+        }
+
+        .image1 {
+            z-index: 1;
+        }
+
+        details {
+            margin-left: 30%;
+            width: 40%;
+        }
+
+            details[open] {
+                z-index: 5;
+            }
+
+        summary {
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: white;
+            list-style: none;
+        }
+
+            summary::-webkit-details-marker {
+                display: none;
+            }
+
+        details[open] summary:before {
+            content: '';
+            display: block;
+            background: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        summary:after {
+            content: '';
+            display: inline-block;
+            float: right;
+            width: .5rem;
+            height: .5rem;
+            border-bottom: 1px solid currentColor;
+            border-left: 1px solid currentColor;
+            border-bottom-left-radius: 2px;
+            transform: rotate(45deg) translate(50%, 0%);
+            transform-origin: center center;
+            transition: transform ease-in-out 100ms
+        }
+
+        summary:focus {
+            outline: none;
+        }
+
+        details[open] summary:after {
+            transform: rotate(-45deg) translate(0%, 0%);
+        }
+
+        ul {
+            list-style-type: none;
+            width: 100%;
+            background: white;
+            top: calc(100% + .5rem);
+            left: 0;
+            padding: 1rem;
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        li {
+            margin: 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+            li:first-child {
+                padding-top: 0;
+            }
+
+            li:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+        /* FAKE SELECT */
+
+        summary.radios {
+            counter-reset: radios;
+        }
+
+            summary.radios:before {
+                content: var(--selection);
+            }
+
+        input[type=radio] {
+            counter-increment: radios;
+            appearance: none;
+            display: none;
+        }
+
+            input[type=radio]:checked {
+                display: inline;
+                --display: block;
+            }
+
+            input[type=radio]:after {
+                content: attr(title);
+                display: inline;
+                font-size: 1rem;
+            }
+
+        ul.list {
+            counter-reset: labels;
+        }
+
+        .label {
+            width: 100%;
+            display: flex;
+            cursor: pointer;
+            justify-content: space-between;
+        }
+
+            .label span {
+                --display: none;
+                display: var(--display);
+                width: 1rem;
+                height: 1rem;
+                border: 1px solid #727272;
+                border-radius: 3px;
+            }
+
+        #pagess {
+            display: none;
+        }
+
+        #visits3 {
+            display: none;
+        }
+
+        #contact-form2 {
+            display: none;
+        }
+
+        .form-controlsubmit {
+            font-family: 'Oswald', sans-serif;
+            margin-left: 0px;
+            height: 5vh;
+            width: 8vw;
+        }
+
+            .form-controlsubmit:hover {
+                background-color: #999;
+                cursor: pointer;
+            }
+
+        @media screen and (max-width: 531px) {
+
+
+            #contact-form {
+                padding-top: 0vh;
+            }
+
+            .form-controlsubmit {
+                margin-bottom: 1vh;
+                width: 25vw;
+                background-color: none;
+            }
+        }
+
+        .form-control1 {
+            display: inline-block;
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            font-size: 1.4em;
+        }
+
+        .form-control2 {
+            display: inline-block;
+            margin-left: 3vw;
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            font-size: 1.4em;
+        }
+
+        #contact-form {
+            padding-top: 5vh;
+            margin-left: 0vw;
+            text-align: center;
+        }
+
+        ::placeholder {
+            font-size: 2.4vh;
+        }
+
+        .form-control {
+            height: 5vh;
+            width: 25vw;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .p {
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            font-size: 2.5vh;
+        }
+
+        #locfilter {
+            display: none;
+        }
+
+        #locfilter2 {
+            display: none;
+        }
+
+        #returnfilter {
+            display: none;
+        }
+
+        #returnfilter2 {
+            display: none;
+        }
+
+        #start {
+            display: none;
+        }
+
+        .form8 {
+            display: none;
+        }
+
+        @media screen and (max-width: 1660px) {
+
+
+            .form6 {
+                width: 70rem;
+            }
+        }
+
+        @media screen and (max-width: 1150px) {
+
+
+            #age {
+                width: 5%;
+                margin-left: 3%;
+            }
+        }
+
+        @media screen and (max-width: 1050px) {
+
+
+            .form6 {
+                width: 50rem;
+            }
+        }
+
+        @media screen and (max-width: 860px) {
+
+
+            #age {
+                margin-left: 1.5%;
+            }
+
+            .input2 {
+                width: 30%;
+            }
+
+            #fillerul {
+                width: 30%;
+            }
+
+            #fillerul2 {
+                width: 30%;
+            }
+        }
+
+        #hq {
+            font-size: 1.3em !important;
+        }
+
+        #investor {
+            font-size: 1.3em !important;
+        }
+
+        @media screen and (max-width: 500px) {
+            .input2 {
+                margin-left: 8% !important;
+                height: 30% !important;
+            }
+
+            #fillerul {
+                left: 8% !important;
+                height: 30% !important;
+            }
+
+            #fillerul2 {
+                left: 8% !important;
+                height: 30% !important;
+            }
+
+            .submit2 {
+                height: 30% !important;
+            }
+
+            .texters {
+                font-size: .5em !important;
+            }
+
+            .form6 {
+                width: 100% !important;
+            }
+
+            .inner {
+                font-size: 1rem !important;
+            }
+
+            #count {
+                font-size: 1rem !important;
+            }
+
+            #industry {
+                font-size: 1rem !important;
+            }
+
+            #hq {
+                font-size: 1rem !important;
+            }
+
+            #clink {
+                font-size: 1rem !important;
+            }
+
+            #rounds {
+                font-size: 1rem !important;
+            }
+
+            #investor {
+                font-size: 1rem !important;
+            }
+
+            .ss {
+                margin-left: 0px !important;
+            }
+
+            .img33 {
+                width: 30px !important;
+                height: 30px !important;
+            }
+
+            .special33 {
+                font-size: .44rem !Important;
+            }
+
+            .data > h2 {
+                font-size: .75rem !Important;
+                margin-left: -5rem !important;
+            }
+
+            .form8 {
+                margin-left: 0px !important;
+                width: 20rem !important;
+                margin-top: 0rem !important;
+                padding-top: 10rem !important;
+            }
+        }
+
+        .form10 {
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 85%;
+            padding: 20px;
+            padding-top: 20px;
+            margin-left: 20rem;
+            width: 40rem;
+            margin-top: 7rem;
+            display: none;
+        }
+
+        #fillerul {
+            display: none;
+        }
+
+        #fillerul2 {
+            display: none;
+        }
+
+        .toucher:hover {
+            background-color: grey;
+            cursor: pointer;
+        }
+
+        .list {
+            border: 1px solid black !important;
+        }
+
+        /*Charts*/
+
+        #motion-effect tr {
+            transition-duration: 0.3s;
+            margin-bottom: 5px;
+        }
+
+        #my-chart {
+            --color: black;
+        }
+
+        #motion-effect tr:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            --color: grey;
+        }
+
+        #motion-effect tr:hover th {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
+        #my-chart.column {
+            height: 80%;
+            width: 370%;
+            margin-left: -100%;
+            margin-top: 28%;
+        }
+        @media screen and (max-width: 500px) {
+            #my-chart.column {
+                height: 70%;
+                width: 130%;
+                margin-top: 28%;
+                margin-left: -15%;
+            }
+        }
+        #motion-effect td {
+            margin-inline-start: 20%;
+            margin-inline-end: 20%;
+            border-radius: 50% / 12px;
+            background: radial-gradient(ellipse 60% 15px at bottom, grey 50px, transparent 50px) bottom, radial-gradient(ellipse 60% 15px at top, lightgrey 50px, transparent 50px) top, linear-gradient(grey, darkgrey, lightgrey);
+        }
+        #motion-effect td {
+            transform-origin: bottom;
+            animation: revealing-bars 4s linear;/*infinte*/
+        }
+
+        @keyframes revealing-bars {
+            0% {
+                transform: scaleY( 0 );
+            }
+
+            15% {
+                transform: scaleY( 1 );
+            }
+        }
+    </style>
+</head>
+<body onload="ifpsw()">
+    <section id="nav3">
+
+        <nav class="color">
+            <div class="dropdown">
+                <a href="#" id="nav2">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </a>
+
+            </div>
+        </nav>
+        <div id="img" style="margin-right: 20px;"><a href="https://www.dawkinspgh.com/"><img height="50" width="50" src="golddawkin.PNG" /></a></div>
+        <div class="sign-out"><a style="color: white; text-decoration: none; position: absolute; top: 10px; right: 180px;" onclick="signout()" href="#">Sign out</a></div>
+        <details id="time" class="custom-select2">
+            <summary class="radios" id="time9">
+
+
+            </summary>
+            <ul class="list" id="time10">
+            </ul>
+        </details>
+        <!--<div id="time" style="text-align: center; position: absolute; bottom: 10px;"></div>-->
+        <details id="refersss" class="custom-select">
+            <summary class="radios" id="refer9">
+
+
+            </summary>
+            <ul class="list" id="refer10">
+            </ul>
+        </details>
+        <!--<div id="refersss" style="text-align: center; position: absolute; bottom: 10px;"></div>-->
+        <details id="buttonss" class="custom-select">
+            <summary class="radios" id="button9">
+
+
+            </summary>
+            <ul class="list" id="button10">
+            </ul>
+        </details>
+        <details id="pagess" class="custom-select">
+            <summary class="radios" id="page9">
+
+
+            </summary>
+            <ul class="list" id="page10">
+            </ul>
+        </details>
+        <details id="locfilter2" class="custom-select showloc">
+            <summary class="radios">
+                <input type="radio" name="item" id="default " title="" checked>Choose A Number of Vistors</input><input type="radio" name="item" id="all" title="All">
+                <input type="radio" name="item" id="5" title="1-5">
+                <input type="radio" name="item" id="10" title="6-10">
+                <input type="radio" name="item" id="15" title="11-15">
+                <input type="radio" name="item" id="20" title="16-20">
+                <input type="radio" name="item" id="21" title="21+">
+            </summary>
+            <ul class="list">
+                <li><label class="label" for="all" onClick="locationFilter(this.id)" id="all">All</label></li>
+                <li><label class="label" for="5" onClick="locationFilter(this.id)" id="5">1-5</label></li>
+                <li><label class="label" for="10" onClick="locationFilter(this.id)" id="10">6-10</label></li>
+                <li><label class="label" for="15" onClick="locationFilter(this.id)" id="15">11-15</label></li>
+                <li><label class="label" for="20" onClick="locationFilter(this.id)" id="20">16-20</label></li>
+                <li><label class="label" for="21" onClick="locationFilter(this.id)" id="21">21+</label></li>
+            </ul>
+        </details>
+        <details id="returnfilter2" class="custom-select showloc">
+            <summary class="radios">
+                <input type="radio" name="item" id="default " title="" checked>Choose A Number of Vistors</input><input type="radio" name="item" id="all" title="All">
+                <input type="radio" name="item" id="5" title="1-5">
+                <input type="radio" name="item" id="10" title="6-10">
+                <input type="radio" name="item" id="15" title="11-15">
+                <input type="radio" name="item" id="20" title="16-20">
+                <input type="radio" name="item" id="21" title="21+">
+            </summary>
+            <ul class="list">
+                <li><label class="label" for="all" onClick="returnFilter(this.id)" id="all">All</label></li>
+                <li><label class="label" for="5" onClick="returnFilter(this.id)" id="5">1-5</label></li>
+                <li><label class="label" for="10" onClick="returnFilter(this.id)" id="10">6-10</label></li>
+                <li><label class="label" for="15" onClick="returnFilter(this.id)" id="15">11-15</label></li>
+                <li><label class="label" for="20" onClick="returnFilter(this.id)" id="20">16-20</label></li>
+                <li><label class="label" for="21" onClick="returnFilter(this.id)" id="21">21+</label></li>
+            </ul>
+        </details>
+
+        <input style=" margin-left: 20%; width:50%; height: 60%; display: inline-block;" type="text" id="userInput22" class="input2" placeholder="Search a Company" value="" />
+        <input style="width:10%; margin-left: 5%; height: 60%; display: inline-block;" id="age2" type="submit" class="submit2" value="Search" />
+        <div id="fillerul2" style="width: 50%;  background-color: white; position: absolute; left: 20%; border-radius: 10px; "><ul id="fillul2"></ul></div>
+    </section>
+
+
+
+    <section id="nav5">
+        <div class="sign-out"><a style="color: white; text-decoration: none;" onclick="signout()" href="#">Sign out</a></div>
+        <details id="time2" class="custom-select">
+            <summary class="radios" id="time92">
+
+
+            </summary>
+            <ul class="list" id="time102">
+            </ul>
+        </details>
+        <!--<div id="time" style="text-align: center; position: absolute; bottom: 10px;"></div>-->
+
+        <details id="refersss2" class="custom-select">
+            <summary class="radios" id="refer92">
+
+
+            </summary>
+            <ul class="list" id="refer102">
+            </ul>
+        </details>
+        <!--<div id="refersss" style="text-align: center; position: absolute; bottom: 10px;"></div>-->
+        <details id="buttonss2" class="custom-select">
+            <summary class="radios" id="button92">
+
+
+            </summary>
+            <ul class="list" id="button102">
+            </ul>
+        </details>
+        <details id="pagess2" class="custom-select">
+            <summary class="radios" id="page92">
+
+
+            </summary>
+            <ul class="list" id="page102">
+            </ul>
+        </details>
+        <details id="locfilter" class="custom-select showloc">
+            <summary class="radios">
+                <input type="radio" name="item" id="default " title="" checked>Choose Number of Visits</input><input type="radio" name="item" id="all" title="All">
+                <input type="radio" name="item" id="5" title="1-5">
+                <input type="radio" name="item" id="10" title="6-10">
+                <input type="radio" name="item" id="15" title="11-15">
+                <input type="radio" name="item" id="20" title="16-20">
+                <input type="radio" name="item" id="21" title="21+">
+            </summary>
+            <ul class="list">
+                <li><label class="label" for="all" onClick="locationFilter(this.id)" id="all">All</label></li>
+                <li><label class="label" for="5" onClick="locationFilter(this.id)" id="5">1-5</label></li>
+                <li><label class="label" for="10" onClick="locationFilter(this.id)" id="10">6-10</label></li>
+                <li><label class="label" for="15" onClick="locationFilter(this.id)" id="15">11-15</label></li>
+                <li><label class="label" for="20" onClick="locationFilter(this.id)" id="20">16-20</label></li>
+                <li><label class="label" for="21" onClick="locationFilter(this.id)" id="21">21+</label></li>
+            </ul>
+        </details>
+        <details id="returnfilter" class="custom-select showloc">
+            <summary class="radios">
+                <input type="radio" name="item" id="default " title="" checked>Choose Number of Visits</input><input type="radio" name="item" id="all" title="All">
+                <input type="radio" name="item" id="5" title="1-5">
+                <input type="radio" name="item" id="10" title="6-10">
+                <input type="radio" name="item" id="15" title="11-15">
+                <input type="radio" name="item" id="20" title="16-20">
+                <input type="radio" name="item" id="21" title="21+">
+            </summary>
+            <ul class="list">
+                <li><label class="label" for="all" onClick="returnFilter(this.id)" id="all">All</label></li>
+                <li><label class="label" for="5" onClick="returnFilter(this.id)" id="5">1-5</label></li>
+                <li><label class="label" for="10" onClick="returnFilter(this.id)" id="10">6-10</label></li>
+                <li><label class="label" for="15" onClick="returnFilter(this.id)" id="15">11-15</label></li>
+                <li><label class="label" for="20" onClick="returnFilter(this.id)" id="20">16-20</label></li>
+                <li><label class="label" for="21" onClick="returnFilter(this.id)" id="21">21+</label></li>
+            </ul>
+        </details>
+            <input style=" margin-left: 20%; width:50%; height: 60%; display: inline-block;" type="text" id="userInput2" class="input2" placeholder="Search a Company" value="" />
+            <input style="width:10%; margin-left: 5%; height: 60%; display: inline-block;" id="age" type="submit" class="submit2" value="Search" />
+            <div id="fillerul" style="width: 50%;  background-color: white; position: absolute; left: 20%; border-radius: 10px; "><ul id="fillul"></ul></div>
+        
+    </section>
+    <section id="nav">
+        <div id="img2"><a href="https://www.dawkinspgh.com/"><img height="50" width="50" src="golddawkin.PNG" class="image1" /></a></div>
+
+        <div id="navHolder">
+            <div class="reports">Reports</div>
+
+            <div id="refer" class="nav">Entry-Point</div>
+            <div id="return" class="nav">Returning</div>
+            <div id="page" class="nav">Page</div>
+
+            <!--<div id="clicks" class="nav">Company</div>-->
+            <div id="times" class="nav">Time</div>
+            <div id="button" class="nav">Buttons</div>
+
+            <div id="locations" class="nav2">Locations</div>
+            <div class="reports">Companies</div>
+            <div id="onlys" class="nav">Search</div>
+            <div id="request" class="nav">Request</div>
+
+
+        </div>
+
+
+    </section>
+    <section id="nav8">
+        
+
+        <div id="navHolder" style="display: block">
+            <div class="reports">Reports</div>
+
+            <div id="refer2" class="nav">Entry-point</div>
+            <div id="return2" class="nav">Returning</div>
+            <div id="page2" class="nav">Page</div>
+
+            <!--<div id="clicks2" class="nav">Company</div>-->
+            <div id="times2" class="nav">Time</div>
+            <div id="button2" class="nav">Buttons</div>
+
+            <div id="locations2" class="nav2">Locations</div>
+            <div class="reports">Companies</div>
+            <div id="onlys2" class="nav">Search</div>
+            <div id="request2" class="nav">Request</div>
+
+
+        </div>
+
+
+    </section>
+    <section>
+
+        <div id="chart_div" class="chart">
+            
+            <table style="background-color: white; padding: 5%;"class="charts-css bar show-heading show-labels show-4-secondary-axes" id="my-chart">
+
+    <caption> 2016 Summer Olympics Medal Table </caption>
+
+    <thead>
+        <tr>
+            <th scope="col"> Country </th>
+            <th scope="col"> Gold </th>
+            <th scope="col"> Silver </th>
+            <th scope="col"> Bronze </th>
+        </tr>
+    </thead>
+
+    <tbody id="motion-effect">
+        <tr>
+            <th scope="row"> USA </th>
+            <td style="--size: 0.46; color: white;"> 46 </td>
+
+        </tr>
+        <tr>
+            <th scope="row"> GBR </th>
+            <td style="--size: 0.27; color: white;"> 27 </td>
+
+        </tr>
+        <tr>
+            <th scope="row"> CHN </th>
+            <td style="--size: 0.26; color: white;"> 26 </td>
+
+        </tr>
+        <tr>
+            <th scope="row"> USA </th>
+            <td style="--size: 0.46; color: white;"> 46 </td>
+
+        </tr>
+        <tr>
+            <th scope="row"> GBR </th>
+            <td style="--size: 0.27; color: white;"> 27 </td>
+
+        </tr>
+        <tr>
+            <th scope="row"> CHN </th>
+            <td style="--size: 0.26; color: white;">  26 </td>
+
+        </tr>
+    </tbody>
+
+</table>
+        </div>
+
+        <div id="chart_div2" class="chart"></div>
+
+        <div id="chart_div3" class="chart"></div>
+
+        <div id="chart_div4" class="chart"></div>
+
+        <div id="chart_div5" class="chart"></div>
+
+        <div id="chart_div6" class="chart"></div>
+
+        <div id="chart_div8" class="chart"></div>
+
+        <div id="contact-form2">
+            <h2 style="color: white; text-align: center;">Request more information on companies if you'd like</h2>
+            <form id="contact-form" method="post" action="https://dawkinspgh.com/request.php">
+                <div>
+                    <div class="form-control1">
+                        <p style="color: white" class="p">Your Company's Name: </p>
+                        <input name="name" type="text" class="form-control" placeholder="Company Name" required>
+                    </div>
+                    <div class="form-control2">
+                        <p style="color: white" class="p">Email:</p>
+                        <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <div class="form-control1">
+                        <br />
+                        <p style="color: white" class="p">Please list the company/companies you would like more information on:</p>
+                        <textarea name="job" rows="7" cols="70" class="form-control" placeholder="" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <input type="submit" class="form-controlsubmit" value="SUBMIT">
+            </form>
+        </div>
+
+        <form class="form" id="start" onsubmit="return false">
+            <label class="title">Click to See Your Dawkins Data !</label>
+            <br />
+
+            <input style="width:80%; margin-top: 10%" type="submit" class="submit1" value="Next" onclick="starter();" />
+        </form>
+
+        <form class="form3" id="wrong" onsubmit="return false">
+            <label class="title2">Wrong Password :( Please refresh and try again</label>
+        </form>
+
+        <form class="form" id="form" onsubmit="return false">
+            <label class="subtitle">Enter your password:</label>
+            <br />
+            <input style="width:80%; margin-top: 5%" type="text" id="userInput" class="input" value="" /><br />
+            <input style="width:80%; margin-top: 5%" id="ages" type="submit" class="submit" value="Next" />
+        </form>
+        <!--
+    <form class="form5" id="remove" onsubmit="return false">
+        <label class="title">Choose A Company !</label>
+        <br />
+
+    </form>-->
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <div id="avg" style="text-align: center; position: absolute; top: 120px; right: 5px; background-color: black; padding: 15px;"></div>
+
+
+        <div id="buttonsss" style="text-align: center; position: absolute; bottom: 60px;"></div>
+        <div id="buttonssss" style="text-align: center; position: absolute; bottom: 60px;"></div>
+        <!--<div id="buttonss" style="text-align: center; position: absolute; bottom: 10px;"></div>-->
+        <div id="visits3" style="text-align: center; position: absolute; bottom: 60px;"><button onClick='showComp()' class='buttonClass'>Show by Company</button><button onClick='showIp()' class='buttonClass'>Show by IP</button></div>
+        <form class="form6" id="only" onsubmit="return false">
+            <div id="div1" style="background-color: transparent; width: 49%; display: inline-block; height: 100%;">
+                <div style="width: 90%; margin-left: 5%; margin-right: 5%; height: 32%; background-color: white; margin-top: 1%; border-radius: 10px;">
+                    <div style="height: 90%; float: left; width: 30%; border-radius: 100px; margin-top: 2%; margin-left: 2%;" id="logo"></div><div style="height: 90%; width: 64%; float: right; margin-right: 2%; margin-top: 2%;" id="compinfo"></div>
+                </div>
+                <div style="width: 90%; margin-left: 5%; margin-right: 5%; height: 65%; background-color: white; margin-top: 1%; border-radius: 10px;">
+                    <div style="font-size: 2em;  margin-top: 3%; margin-left:30%; float: left;" class="ss">Decision Makers</div>
+                    <div style="margin-top: 2%; margin-left: 5%; height: 17%; width: 90%; float: left;" id="d1"></div>
+                    <div style="margin-top: 2%; height: 17%; margin-left: 5%; width: 90%; float: left;" id="d2"></div>
+                    <div style="margin-top: 2%; height: 17%; margin-left: 5%; width: 90%; float: left;" id="d3"></div>
+                    <div style="margin-top: 2%; height: 17%; margin-left: 5%; width: 90%; float: left;" id="d4"></div>
+                </div>
+            </div>
+            <div id="div2" style="background-color: transparent; width: 49%; display: inline-block; height: 100%;">
+                <div style="width: 90%; margin-left: 5%; margin-right: 5%; height: 32%; background-color: white; margin-top: 1%; border-radius: 10px;">
+                    <div style="margin-top: 2%; margin-left: 1%; height: 30%; width: 90%; float: left; font-size: 1.6em;" id="count">  </div>
+                    <div style="margin-top: 2%; height: 30%; margin-left: 1%; width: 90%; float: left; font-size: 1.6em;" id="industry">  </div>
+                    <div style="margin-top: 2%; height: 30%; margin-left: 1%; width: 90%; float: left; font-size: 1.6em;" id="hq"> </div>
+                </div>
+                <div style="width: 90%; margin-left: 5%; margin-right: 5%; height: 32%; background-color: white; margin-top: 1%; border-radius: 10px;">
+                    <div style="font-size: 2em;  margin-top: 1%; margin-left:37%; float: left;" class="ss">Specialties</div>
+                    <div style="margin-top: 2%; margin-left: 5%; height: 60%; width: 90%; float: left;" id="special"></div>
+                </div>
+                <div style="width: 90%; margin-left: 5%; margin-right: 5%; height: 32%; background-color: white; margin-top: 1%; border-radius: 10px;">
+                    <div style="margin-top: 2%; margin-left: 1%; height: 30%; width: 90%; float: left; font-size: 1.6em;" id="clink"> </div>
+                    <div style="margin-top: 2%; height: 30%; margin-left: 1%; width: 90%; float: left; font-size: 1.6em;" id="rounds">  </div>
+                    <div style="margin-top: 2%; height: 30%; margin-left: 1%; width: 90%; float: left; font-size: 1.6em;" id="investor">  </div>
+                </div>
+            </div>
+
+
+            <label class="title" style="display: none;">Search company's data</label>
+            <div class='data' style=" display: none;margin-top: 10px;" id="service"><i>If the company is not shown make a request and we will get<br> back to you asap.</i></div>
+
+            <input style="display: none; width: 80%; margin-top: 5%" type="text" id="userInput2" class="input2" placeholder="Search a Company" value="" /><br />
+            <input style="display: none; width: 80%; margin-top: 5%" type="text" id="userInput3" class="input2" placeholder="Search by Domain" value="" /><br />
+            <input style="display: none; width: 80%; margin-top: 5%" id="age" type="submit" class="submit2" value="Search" />
+
+
+
+        </form>
+        <form class="form10" onsubmit="return false">
+            <div class='data' id="loading"><h2>Loading...</h2></div>
+        </form>
+            <form class="form8" onsubmit="return false">
+                <label id="labe"></label>
+            </form>
+</section>
+
+    <script type="text/javascript">
+        var times = [];
+        var timeArr = [];
+        var buttons = [];
+        var buttonsArr = [];
+        var number;
+        var sqltable;
+        var ms = 600000000;
+        var tableName = "";
+        var comparer = "";
+        var char = "";
+        var input;
+        var logic = [];
+        var first = true;
+        var showData = false;
+        var data = "";
+        var once = true;
+        var locationsfr;
+        var buttonfr;
+        var width = 775;
+        var height = 330;
+        var clicker = 0;
+        var arrfr;
+        var visitsfr;
+        var psfr;
+        var referfr;
+        var pagesfr;
+        var foruses = 0;
+        var collector;
+        var collection;
+        var global;
+        var companyDet;
+        var collectionPage;
+        var collectorPage;
+        var visitsComp = [];
+        var showcomp = 0;
+        var showip = 1;
+        var cookies = 0;
+
+        function myFunctions(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart7(buttonfr, width, height));
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart7(buttonfr, width, height));
+                }
+            }
+
+        }
+
+        function myFunctions2(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart5(locationsfr, width, height));
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart5(locationsfr, width, height));
+                }
+            }
+        }
+
+        function myFunctions3(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart8(arrayy, width, height));
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart8(arrayy, width, height));
+                }
+            }
+        }
+
+        function navBar(x) {
+            if (x.matches) { // If media query matches
+                $('#nav3').show();
+                $('#nav').hide();
+                $('#nav5').hide();
+            } else {
+                $('#nav').show();
+                $('#nav3').hide();
+                $('#nav5').show();
+            }
+        }
+
+
+
+        function myFunctions4(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart2(visitsfr, width, height));
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart2(visitsfr, width, height));
+                }
+            }
+        }
+
+        function myFunctions5(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart4(psfr, width, height));
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart4(psfr, width, height));
+                }
+            }
+        }
+
+        function myFunctions6(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart(referfr, width, height));
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart(referfr, width, height));
+                }
+            }
+        }
+
+        function myFunctions7(x) {
+            if (x.matches) { // If media query matches
+                width = 400;
+                height = 300;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart3(pagesfr, width, height))
+                }
+            } else {
+                width = 775;
+                height = 430;
+                if (foruses > 0) {
+                    google.charts.setOnLoadCallback(drawChart3(pagesfr, width, height));
+                }
+            }
+        }
+
+
+        var windows = window.matchMedia("(max-width: 900px)") // Change graph size on mobile
+
+
+        myFunctions(windows)
+        myFunctions2(windows)
+        myFunctions3(windows)
+        myFunctions4(windows)
+        myFunctions5(windows)
+        myFunctions6(windows)
+        myFunctions7(windows) // Call listener function at run time
+        foruses = foruses + 1;
+        windows.addListener(myFunctions) // Attach listener function on state changes
+        windows.addListener(myFunctions2)
+        windows.addListener(myFunctions3)
+        windows.addListener(myFunctions4)
+        windows.addListener(myFunctions5)
+        windows.addListener(myFunctions6)
+        windows.addListener(myFunctions7)
+
+        document.getElementById("refer").addEventListener("click", function () {
+
+            //console.log(char);
+
+            $('.nav2').css('color', 'grey');
+            $('#chart_div').show();
+            $('#chart_div2').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#avg').hide();
+            $('#buttonss').hide();
+            $('#locfilter').hide();
+            $('#locfilter2').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#buttonsss').hide();
+            $('#only').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('.form5').hide();
+            $('#chart_div8').hide();
+            $('#refersss').show();
+            $('#visits3').hide();
+            $('#pagess').hide();
+            $('.nav').css('color', 'grey');
+            $('#contact-form2').hide();
+            $('#refer').css('color', 'gold');
+            $('#buttonss2').hide();
+            $('#refersss2').show();
+            $(".form8").hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            showReferButtons(companyDet);
+
+            
+        });
+
+        document.getElementById("refer2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#refer').css('color', 'gold');
+            $('#chart_div').show();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#chart_div4').hide();
+            $('#avg').hide();
+            $('#locfilter2').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#locfilter').hide();
+            $('#only').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('.form5').hide();
+            $('#chart_div8').hide();
+            $('#refersss').show();
+            $('#visits3').hide();
+            $(".form8").hide();
+            $('#pagess').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').show();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            
+
+            $('#contact-form2').hide();
+            showReferButtons(companyDet);
+
+        });
+
+        document.getElementById("return").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#return').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').show();
+            $(".form8").hide();
+            $('#locfilter2').hide();
+            $('#chart_div3').hide();
+            $('#returnfilter').show();
+            $('#returnfilter2').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#avg').hide();
+            $('#buttonss').hide();
+            $('#locfilter').hide();
+            $('#buttonsss').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('#only').hide();
+            $('.form5').hide();
+            $('#chart_div8').hide();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#visits3').show();
+            $('#contact-form2').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+
+        });
+
+        document.getElementById("return2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#return').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').show();
+            $('#avg').hide();
+            $('#locfilter2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').show();
+            $('#chart_div6').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $(".form8").hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('#only').hide();
+            $('.form5').hide();
+            $('#chart_div8').hide();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#locfilter').hide();
+            $('#visits3').show();
+            $('#contact-form2').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+
+        });
+
+        document.getElementById("page").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#page').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#returnfilter').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#returnfilter2').hide();
+            $('#chart_div3').show();
+            $('#chart_div4').hide();
+            $(".form8").hide();
+            $('#avg').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#chart_div8').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('#locfilter2').hide();
+            $('#visits3').hide();
+            $('.form5').hide();
+            $('#chart_div8').hide();
+            $('#locfilter').hide();
+            $('#only').hide();
+            $('#refersss').hide();
+            $('#pagess').show();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').show();
+            $('#time2').hide();
+            $('#contact-form2').hide();
+            showPageButtons(companyDet);
+
+
+        });
+
+        document.getElementById("page2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#page').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#returnfilter').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#returnfilter2').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').show();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#chart_div8').hide();
+            $(".form8").hide();
+            $('#buttonss').hide();
+            $('#locfilter').hide();
+            $('#locfilter2').hide();
+            $('#buttonsss').hide();
+            $('#avg').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('.form5').hide();
+            $('#visits3').hide();
+            $('#chart_div8').hide();
+            $('#only').hide();
+            $('#refersss').hide();
+            $('#pagess').show();
+            $('#contact-form2').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').show();
+            $('#time2').hide();
+            showPageButtons(companyDet);
+
+
+        });
+
+        /*document.getElementById("clicks").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#clicks').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').show();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('.form5').hide();
+            $('#only').hide();
+            $('#chart_div8').hide();
+            $('#avg').hide();
+            $('#visits3').hide();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#contact-form2').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+        });
+
+        document.getElementById("clicks2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#clicks').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#visits3').hide();
+            $('#chart_div4').show();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('#avg').hide();
+            $('#pagess').hide();
+            $('.form5').hide();
+            $('#only').hide();
+            $('#chart_div8').hide();
+            $('#refersss').hide();
+            $('#contact-form2').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+        });*/
+
+        document.getElementById("locations").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#locations').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div6').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#buttonss').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#buttonsss').hide();
+            $(".form8").hide();
+            $('#visits3').hide();
+            $('#pagess').hide();
+            $('#buttonssss').hide();
+            $('#chart_div8').hide();
+            $('#chart_div5').show();
+            $('#locfilter').show();
+            $('#locfilter2').hide();
+            $('#avg').hide();
+            $('#time').hide();
+            $('.form5').hide();
+            $('#only').hide();
+            $('#refersss').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#contact-form2').hide();
+        });
+
+        document.getElementById("locations2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#locations').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#chart_div4').hide();
+            $('#chart_div6').hide();
+            $('#locfilter').hide();
+            $('#locfilter2').show();
+            $(".form8").hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#visits3').hide();
+            $('#chart_div8').hide();
+            $('#chart_div5').show();
+            $('#avg').hide();
+            $('#time').hide();
+            $('#pagess').hide();
+            $('.form5').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#only').hide();
+            $('#refersss').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#contact-form2').hide();
+        });
+
+        document.getElementById("onlys").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#onlys').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#age').show();
+            $('#age2').show();
+            $('#userInput22').show();
+            $('#userInput2').show();
+            $('#avg').hide();
+            $('#locfilter').hide();
+            $('#chart_div4').hide();
+            $('#locfilter2').hide();
+            $('#chart_div6').hide();
+            $('#chart_div5').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $(".form8").hide();
+            $('#chart_div8').hide();
+            $('#visits3').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#buttonssss').hide();
+            $('#time').hide();
+            $('.form5').hide();
+            $('#only').hide();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#contact-form2').hide();
+        });
+
+        document.getElementById("onlys2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#onlys').css('color', 'gold');
+            $('#locfilter2').hide();
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div5').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#age').show();
+            $('#age2').show();
+            $('#userInput22').show();
+            $('#userInput2').show();
+            $('#locfilter').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#buttonsss').hide();
+            $(".form8").hide();
+            $('#avg').hide();
+            $('#visits3').hide();
+            $('.form5').hide();
+            $('#chart_div8').hide();
+            $('#buttonssss').hide();
+            $('#pagess').hide();
+            $('#time').hide();
+            $('#only').hide();
+            $('#refersss').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#contact-form2').hide();
+        });
+
+        document.getElementById("button").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('#locfilter2').hide();
+            $('.nav').css('color', 'grey');
+            $('#button').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#locfilter').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').show();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#buttonss').show();
+            $('#buttonsss').show();
+            $('#avg').hide();
+            $('#chart_div8').hide();
+            $('#buttonssss').show();
+            $('#pagess').hide();
+            $(".form8").hide();
+            $('#only').hide();
+            $('#visits3').hide();
+            $('#time').hide();
+            $('#buttonss2').show();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#refersss').hide();
+            $('#contact-form2').hide();
+            showButtons(buttons);
+
+        });
+
+        document.getElementById("button2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('#locfilter2').hide();
+            $('.nav').css('color', 'grey');
+            $('#button').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $(".form8").hide();
+            $('#chart_div5').hide();
+            $('#locfilter').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#avg').hide();
+            $('#chart_div6').show();
+            $('#pagess').hide();
+            $('#visits3').hide();
+            $('#buttonss').show();
+            $('#buttonsss').show();
+            $('#chart_div8').hide();
+            $('#buttonssss').show();
+            $('#only').hide();
+            $('#buttonss2').show();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#time').hide();
+            $('#refersss').hide();
+            $('#contact-form2').hide();
+            showButtons(buttons);
+
+        });
+
+        document.getElementById("times").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#times').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $(".form8").hide();
+            $('#avg').show();
+            $('#locfilter').hide();
+            $('#visits3').hide();
+            $('#chart_div6').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('.form5').hide();
+            $('#buttonssss').hide();
+            $('#only').hide();
+            $('#time').show();
+            $('#locfilter2').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').show();
+            $('#chart_div8').show();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#contact-form2').hide();
+        });
+
+        document.getElementById("times2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#times').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#avg').show();
+            $('#chart_div3').hide();
+            $('#locfilter2').hide();
+            $(".form8").hide();
+            $('#visits3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#locfilter').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#only').hide();
+            $('.form5').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#time').show();
+            $('#chart_div8').show();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').show();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#contact-form2').hide();
+
+        });
+
+        document.getElementById("request").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#request').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#avg').hide();
+            $('#chart_div3').hide();
+            $('#locfilter2').hide();
+            $('#visits3').hide();
+            $('#chart_div4').hide();
+            $('#locfilter').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#only').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('.form5').hide();
+            $(".form8").hide();
+            $('#time').hide();
+            $('#chart_div8').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#contact-form2').show();
+
+        });
+
+        document.getElementById("request2").addEventListener("click", function () {
+
+            //console.log(char);
+            $('.nav2').css('color', 'grey');
+            $('.nav').css('color', 'grey');
+            $('#request').css('color', 'gold');
+            $('#chart_div').hide();
+            $('#locfilter2').hide();
+            $('#chart_div2').hide();
+            $('#locfilter').hide();
+            $('#age').hide();
+            $('#age2').hide();
+            $('#userInput22').hide();
+            $('#userInput2').hide();
+            $('#avg').hide();
+            $('#chart_div3').hide();
+            $('#visits3').hide();
+            $('#chart_div4').hide();
+            $(".form8").hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#buttonsss').hide();
+            $('#buttonssss').hide();
+            $('#buttonss2').hide();
+            $('#refersss2').hide();
+            $('#returnfilter').hide();
+            $('#returnfilter2').hide();
+            $('#pagess2').hide();
+            $('#time2').hide();
+            $('#only').hide();
+            $('.form5').hide();
+            $('#time').hide();
+            $('#chart_div8').hide();
+            $('#refersss').hide();
+            $('#pagess').hide();
+            $('#contact-form2').show();
+
+        });
+
+
+        document.getElementById("ages").addEventListener("click", function () {
+            input = $('#userInput');
+            char = input.val();
+            
+            compare(char);
+            
+        });
+
+        document.getElementById("nav2").addEventListener("click", function () {
+            if (clicker == 0) {
+                $('#nav8').show();
+                clicker = clicker + 1;
+            } else {
+                $('#nav8').hide();
+                clicker = clicker - 1;
+            }
+
+
+        });
+
+
+        document.getElementById("age2").addEventListener("click", function () {
+            document.getElementById('labe').innerHTML = '';
+            input = $('#userInput22');
+            var chars = input.val();
+            input2 = $('#userInput3');
+
+            var chars2 = input2.val();
+
+            $('#userInput22').val('');
+            $('#userInput3').val('');
+            if (chars == '') {
+                domain(chars2)
+            } else {
+                nodomain(chars)
+            }
+        });
+
+        
+
+        
+
+
+
+
+        // Constant search check
+
+
+        var intervalId = window.setInterval(function () {
+            var innerput = $('#userInput2');
+            var innerput2 = $('#userInput22');
+            var charsa2 = innerput2.val();
+            var charsa = innerput.val();
+            if (charsa != null && charsa != "" && charsa != " ") {
+
+                // call db
+                continuecall(cos, charsa);
+                
+            } else if (charsa2 != null && charsa2 != "" && charsa2 != " ") {
+                continuecall(cos, charsa2);
+            } else {
+                $('#fillerul').hide();
+                $('#fillerul2').hide();
+            }
+        }, 1000);
+
+        function continuecall(cos, input) {
+            var li = "";
+            for (var t = 0; t < cos[0].length; t++) {
+                if (cos[0][t].toLowerCase().includes(input)) {
+                    var sent = cos[2][t].split("/");
+                    sent = sent[sent.length - 1] + "";
+                    li = li + "<li class='toucher' id='" + sent + "'onclick='callli(this.id)'><img src='" + cos[1][t] + "' style='width: 25px; height: 25px; margin-right: 3%;'>" + cos[0][t] + "</li>";
+                }
+                // fill in lists
+            }
+
+            if (li != "") {
+                $('#fillerul').show();
+                $('#fillul').html(li);
+                $('#fillerul2').show();
+                $('#fillul2').html(li);
+                // fill in lists
+            } else {
+                $('#fillerul').hide();
+                $('#fillerul2').hide();
+            }
+        }
+
+        function callli(id) {
+            id = id + "";
+            $('#fillerul').hide();
+            $('#userInput2').val('');
+            $('#fillerul2').hide();
+            $('#userInput22').val('');
+            nodomain(id);
+        }
+
+
+
+        window.addEventListener("load", getcomp, false); // Add onload listener
+
+        
+
+        function getcomp() {
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/companies.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: ["Companies", 2] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        comparer = obj.result;
+                        if (comparer != null) {
+                            cos = (comparer);
+                        }
+                        //call next function here
+                    }
+                    else {
+                        console.log;
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+        }
+
+
+         ////////////////////////////////////////////////
+
+
+
+
+        document.getElementById("age").addEventListener("click", function () {
+            document.getElementById('labe').innerHTML = '';
+            input = $('#userInput2');
+            var chars = input.val();
+            input2 = $('#userInput3');
+
+            var chars2 = input2.val();
+
+            $('#userInput2').val('');
+            $('#userInput3').val('');
+            if (chars == '') {
+                domain(chars2)
+            } else {
+                nodomain(chars)
+            }
+
+            /*
+           fetch(`https://api.linkedin.com/v2/search?q=mcdonalds&type=company `, {
+               headers: {
+                   "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+               }
+           })
+               .then(response => {
+                   console.log(response)
+                   if (response.status === 200) {
+                       // Parse the JSON data from the API response
+                       response.json().then(data => {
+                           if (data.total_results > 0) {
+                               // Extract the relevant information about the company
+                               console.log(data);
+                               const company = data.results[0];
+                               const companyName = company.name;
+                               const companyRevenue = company.revenue;
+                               const companyDecisionMakers = company.decision_makers;
+                           } else {
+                               console.log(data);
+                           }
+                       });
+                   }
+               });
+               */
+
+
+
+            /*
+
+            var splitt = data.split('<div class="data"><h2>');
+            for (i of splitt) {
+                var temp = i.split('</h2>');
+                if (temp[0].includes(chars)) {
+                    document.getElementById('labe').innerHTML = '<div class="data"><h2>' + i;
+                    break;
+                }
+            }*/
+
+        });
+        
+        function domain(comp) {
+
+            var url = 'https://companies-datas.p.rapidapi.com/v2/company?query=' + comp;
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'e789188e64msh375a74d0aed7a2cp1e3481jsn088add1723c4',
+                    'X-RapidAPI-Host': 'companies3.p.rapidapi.com'
+                }
+            };
+            //https://companies3.p.rapidapi.com/v2/company?query=amazon.com
+            //https://companies-datas.p.rapidapi.com/v2/company?query=amazon.com
+            fetch(url, options)
+                .then(response => response.json())
+                .then(response => {
+                    var socials = '';
+                    if (response.name === undefined) {
+                        document.getElementById('labe').innerHTML = "<div class='data'><h2>Sorry, we couldn't find any companies<br> that match your search criteria :(</h2></div>";
+                    } else {
+                        if (response.social_networks != null) {
+                            socials = '<br><br>Socials<br><br>';
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.instagram !== undefined || response.social_networks.instagram != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.instagram + '"> Instagram &nbsp;&nbsp; </a>'
+                                    break;
+                                }
+                            }
+
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.facebook !== undefined || response.social_networks.facebook != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.facebook + '">    Facebook &nbsp;&nbsp; </a>'
+                                    break;
+                                }
+                            }
+
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.linkedin !== undefined || response.social_networks.linkedin != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.linkedin + '"> LinkedIn &nbsp;&nbsp;  </a>'
+                                    break;
+                                }
+                            }
+
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.twitter !== undefined || response.social_networks.twitter != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.twitter + '"> Twitter &nbsp;&nbsp; </a>'
+                                    break;
+                                }
+                            }
+                        }
+                        var monthlyV = '';
+                        var phoneN = '';
+                        var revenue = '';
+                        var staff = '';
+                        if (response.monthly_visitors == null) {
+                            monthlyV = 'none';
+                        } else {
+                            monthlyV = response.monthly_visitors;
+                        }
+                        if (response.phone_number == null) {
+                            phoneN = 'none';
+                        } else {
+                            phoneN = response.phone_number;
+                        }
+                        if (response.revenue == null) {
+                            revenue = 'none';
+                        } else {
+                            revenue = response.revenue;
+                        }
+                        if (response.staff_range == null) {
+                            staff = 'none';
+                        } else {
+                            staff = response.staff_range;
+                        }
+                        var industries = '';
+
+                        for (k = 0; k < 3 && k < response.industries.length; k++) {
+                            var res = k + 1;
+                            industries = industries + " " + res + "." + response.industries[response.industries.length - k - 1];
+                        }
+                        if (industries == '' || industries == ' ') {
+                            industries = 'none';
+                        }
+                        
+                        document.getElementById('labe').innerHTML = '<div class="data"><h2>' + response.name + '</h2><p style="font-size: .1.3em;">Industries: ' + industries + '<br> Phone Number: ' + phoneN + '<br> Revenue: ' + revenue + '<br> Employee Count: ' + staff + socials + '</p></div>';
+
+                    }
+                })
+                .catch(err => {
+
+                    document.getElementById('labe').innerHTML = "<div class='data'><h2 >Sorry, we couldn't find any companies<br> that match your search criteria :(</h2></div>";
+
+                });
+        }
+
+        var catcher = 0;
+        function addtodb(logo, company, linkedin) {
+            var k = 0;
+            for (var g = 0; g < cos[0].length; g++) {
+                if (cos[0][g] == company) {
+                   
+                    k = 1;
+                }
+            } 
+            if (k == 0) {
+                $.post("https://sqlphpwebapptry.azurewebsites.net/company.php", { company: company, logo: logo, linkedin: linkedin});      
+            }               
+        }
+
+        function nodomain(chars) {
+            console.log(chars);
+            $(".form10").show();
+            $(".form6").hide();
+            $(".form8").hide();
+            company = chars.split(' ');
+            
+            var comp = company[0];
+            for (i = 1; i < company.length; i++) {
+                comp = comp + "-" + company[i];
+            }
+            if (chars == 'eagle one' || chars == 'eagleone') {
+                comp = 'eagleoneinsights.com';
+            }
+            console.log(comp);
+            var url2 = 'https://linkedin-company-data.p.rapidapi.com/linkedInCompanyDataJson';
+            var newurl = 'https://www.linkedin.com/company/' + comp + '/';
+            
+            const options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'X-RapidAPI-Key': 'e789188e64msh375a74d0aed7a2cp1e3481jsn088add1723c4',
+                    'X-RapidAPI-Host': 'linkedin-company-data.p.rapidapi.com'
+                },
+                body: '{"liUrls":["' + newurl + '"]}'
+            };
+            //https://companies3.p.rapidapi.com/v2/company?query=amazon.com
+            //https://companies-datas.p.rapidapi.com/v2/company?query=amazon.com
+            
+            fetch(url2, options)
+                .then(response => response.json())
+                .then(response => {
+                    
+                    $(".form10").hide();
+                    $(".form6").hide();
+                    $(".form8").hide();
+                    if (response.message != "Page does not exist") {
+                        console.log(response);
+                        catcher = 0;
+                        $(".form8").hide();
+                        $(".form6").show();
+                        addtodb(response.Results[0].Logo, response.Results[0].CompanyName, response.Results[0].CompanyLIUrl);
+
+                        var logoImage = "#";
+                        if (response.Results[0].Logo != null) {
+                            logoImage = response.Results[0].Logo;
+                        }
+
+                        var websiteurl = "#";
+
+                        if (response.Results[0].Website != null) {
+                            websiteurl = response.Results[0].Website;
+                        }
+
+                        var compName = response.Results[0].CompanyName;
+                        var linkedinurl = response.Results[0].CompanyLIUrl;
+                        
+                        var d1name = "N/A";
+                        var d1title = "N/A";
+                        var d1link = "N/A";
+                        var d2name = "N/A";
+                        var d2title = "N/A";
+                        var d2link = "N/A";
+                        var d3name = "N/A";
+                        var d3title = "N/A";
+                        var d3link = "N/A";
+                        var d4name = "N/A";
+                        var d4title = "N/A";
+                        var d4link = "N/A";
+                        if (response.Results[0].Employees[0] != null) {
+                            d1name = response.Results[0].Employees[0].Name;
+                             d1title = response.Results[0].Employees[0].Title;
+                             d1link = response.Results[0].Employees[0].Link;
+                        } 
+
+                        if (response.Results[0].Employees[1] != null) {
+                             d2name = response.Results[0].Employees[1].Name;
+                             d2title = response.Results[0].Employees[1].Title;
+                             d2link = response.Results[0].Employees[1].Link;
+                        } 
+
+                        if (response.Results[0].Employees[2] != null) {
+                             d3name = response.Results[0].Employees[2].Name;
+                             d3title = response.Results[0].Employees[2].Title;
+                             d3link = response.Results[0].Employees[2].Link;
+                        } 
+
+                        if (response.Results[0].Employees[3] != null) {
+                             d4name = response.Results[0].Employees[3].Name;
+                             d4title = response.Results[0].Employees[3].Title;
+                             d4link = response.Results[0].Employees[3].Link;
+                        } 
+                        
+                        var count = response.Results[0].EmployeeCountOnLI;
+                        var industries = response.Results[0].Industries;
+                        industries = industries.split(" ");
+                        
+                        var hq = "N/A";
+                        var special = [];
+                        if (response.Results[0].Specialties != null) {
+                            special = response.Results[0].Specialties;
+                            special = special.split(",");
+                        }
+                        
+                        if (response.Results[0].Headquarters != null) {
+                            hq = response.Results[0].Headquarters;
+                        }
+
+                        var fund = response.Results[0].FundingInfo;
+
+                        $('#logo').css("background-image", "url(" + logoImage + ")")
+                        var compinfo = "<div class='inner' style='font-size: 1.7em; color: black; margin-top: 3.5%;'>Company Name: <br> " + compName + "</div><br><div class='inner' style='font-size: 1.7em; color: black;'><a target='_blank' href='" + linkedinurl + "'>Linkedin</a></div><br><div class='inner' style='font-size: 1.7em; color: black;'><a target='_blank' href='" + websiteurl + "'>Website</a></div>";
+                        document.getElementById('compinfo').innerHTML = compinfo;
+                        if (d1title == null || d1title == "") {
+                            d1title = 'N/A';
+                        }
+                        var d1 = "<div class='texters' style='margin-top: 2%; color: black; font-size: .85em; float: left; margin-left: 2%; width: 70%;'> <b>Name:</b> " + d1name + " <br> <b>Title: </b>" + d1title + "</div><div style='margin-top: 2.5%; float: right; margin-right: 5%;'><a target='_blank' href='" + d1link + "'><img class='img33' src='linkedin.png' style='width: 50px; height: 50px;'/></a></div>"
+
+                        if (d2title == null || d2title == "") {
+                            d2title = 'N/A';
+                        }
+                        var d2 = "<div class='texters'style='margin-top: 2%; color: black; font-size: .85em; float: left; margin-left: 2%; width: 70%;'> <b>Name:</b> " + d2name + " <br> <b>Title:</b> " + d2title + "</div><div style='margin-top: 2.5%; float: right; margin-right: 5%;'><a target='_blank' href='" + d2link + "'><img class='img33' src='linkedin.png' style='width: 50px; height: 50px;'/></a></div>"
+
+                        if (d3title == null || d3title == "") {
+                            d3title = 'N/A';
+                        }
+                        var d3 = "<div class='texters'style='margin-top: 2%; color: black; font-size: .85em; float: left; margin-left: 2%; width: 70%;'><b> Name:</b> " + d3name + " <br> <b>Title:</b> " + d3title + "</div><div style='margin-top: 2.5%; float: right; margin-right: 5%;'><a target='_blank' href='" + d3link + "'><img class='img33' src='linkedin.png' style='width: 50px; height: 50px;'/></a></div>"
+
+                        if (d4title == null || d4title == "") {
+                            d4title = 'N/A';
+                        }
+                        var d4 = "<div class='texters' style='margin-top: 2%; color: black; font-size: .85em; float: left; margin-left: 2%; width: 70%;'> <b>Name: </b>" + d4name + " <br> <b>Title:</b> " + d4title + "</div><div style='margin-top: 2.5%; float: right; margin-right: 5%;'><a target='_blank' href='" + d4link + "'><img class='img33' src='linkedin.png' style='width: 50px; height: 50px;'/></a></div>"
+
+                        var specialty = "";
+
+                        for (var i = 0; i < special.length && i < 16; i++) {
+                            specialty = specialty + "<div class='special33' style='width: 49%; font-size: .8em; float: left;'>" + (i + 1) + ". " + special[i] + "</div>"
+                        }
+
+
+
+                        document.getElementById('d1').innerHTML = d1;
+                        document.getElementById('d2').innerHTML = d2;
+                        document.getElementById('d3').innerHTML = d3;
+                        document.getElementById('d4').innerHTML = d4;
+                        document.getElementById('count').innerHTML = "Employee Count: " + count;
+                        document.getElementById('industry').innerHTML = "Industry: " + industries[0];
+                        document.getElementById('hq').innerHTML = "Headquarters: " + hq;
+                        document.getElementById('special').innerHTML = specialty;
+
+                        if (fund != null || fund != "" || fund != " ") {
+                            document.getElementById('clink').innerHTML = "Crunchbase Link: " + "<a target='_blank' href='" + fund["crunchbase-link"] + "'>Crunchbase</a>";
+                            document.getElementById('rounds').innerHTML = "# Of Funding Rounds: " + fund["number-of-funding-rounds"];
+                            document.getElementById('investor').innerHTML = "First Listed Investor: " + fund["first-listed-investor"];
+                        }
+                        
+
+                    } else {
+                        
+                        
+                            catcher = 0;
+                            $(".form10").hide();
+                            $(".form6").hide();
+                            $(".form8").show();
+                            document.getElementById('labe').innerHTML = "<div class='data'><h2>Sorry, we couldn't find any companies<br> that match your search criteria :(<br> Try putting in the exact linkedin company name.</h2></div>";
+                        
+                    }
+                   
+                   
+                    
+
+                })
+                .catch(err => {
+                    catcher = 0;
+                    $(".form10").hide();
+                    $(".form6").hide();
+                    $(".form8").show();
+                    document.getElementById('labe').innerHTML = "<div class='data'><h2>Sorry, we couldn't find any companies<br> that match your search criteria :(<br> Try putting in the exact linkedin company name.</h2></div>";
+                    
+                });
+        }
+
+        
+
+
+        function tryorg(chars) {
+            company = chars.split(' ');
+            var comp = '';
+            for (i = 0; i < company.length; i++) {
+                comp = comp.concat(company[i]);
+            }
+            comp = comp + '.org';
+            var url = 'https://companies-datas.p.rapidapi.com/v2/company?query=' + comp;
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'e789188e64msh375a74d0aed7a2cp1e3481jsn088add1723c4',
+                    'X-RapidAPI-Host': 'companies3.p.rapidapi.com'
+                }
+            };
+            //https://companies3.p.rapidapi.com/v2/company?query=amazon.com
+            //https://companies-datas.p.rapidapi.com/v2/company?query=amazon.com
+            fetch(url, options)
+                .then(response => response.json())
+                .then(response => {
+                    var socials = '';
+                    if (response.name === undefined) {
+                        document.getElementById('labe').innerHTML = "<div class='data'><h2>Sorry, we couldn't find any companies<br> that match your search criteria :(</h2></div>";
+                    } else {
+                        if (response.social_networks != null) {
+                            socials = '<br><br>Socials<br><br>';
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.instagram !== undefined || response.social_networks.instagram != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.instagram + '">  Instagram &nbsp;&nbsp; </a>'
+                                    break;
+                                }
+                            }
+
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.facebook !== undefined || response.social_networks.facebook != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.facebook + '">  Facebook &nbsp;&nbsp;  </a>'
+                                    break;
+                                }
+                            }
+
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.linkedin !== undefined || response.social_networks.linkedin != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.linkedin + '">  LinkedIn &nbsp;&nbsp; </a>'
+                                    break;
+                                }
+                            }
+
+                            for (j = 0; j < Object.keys(response.social_networks).length; j++) {
+                                if (response.social_networks.twitter !== undefined || response.social_networks.twitter != null) {
+                                    socials = socials + '<a style="color: white; text-decoration: none;" target="_blank" href="' + response.social_networks.twitter + '">   Twitter &nbsp;&nbsp;  </a>'
+                                    break;
+                                }
+                            }
+                        }
+                        var monthlyV = '';
+                        var phoneN = '';
+                        var revenue = '';
+                        var staff = '';
+                        if (response.monthly_visitors == null) {
+                            monthlyV = 'none';
+                        } else {
+                            monthlyV = response.monthly_visitors;
+                        }
+                        if (response.phone_number == null) {
+                            phoneN = 'none';
+                        } else {
+                            phoneN = response.phone_number;
+                        }
+                        if (response.revenue == null) {
+                            revenue = 'none';
+                        } else {
+                            revenue = response.revenue;
+                        }
+                        if (response.staff_range == null) {
+                            staff = 'none';
+                        } else {
+                            staff = response.staff_range;
+                        }
+                        var industries = '';
+
+                        for (k = 0; k < 3 && k < response.industries.length; k++) {
+                            var res = k + 1;
+                            industries = industries + " " + res + "." + response.industries[response.industries.length - k - 1];
+                        }
+                        if (industries == '' || industries == ' ') {
+                            industries = 'none';
+                        }
+                        document.getElementById('labe').innerHTML = '<div class="data"><h2>' + response.name + '</h2><p style="font-size: .1.3em;">Industries: ' + industries + '<br> Phone Number: ' + phoneN + '<br> Revenue: ' + revenue + '<br> Employee Count: ' + staff + socials + '</p></div>';
+                    }
+                    
+                })
+                .catch(err => {
+
+                    document.getElementById('labe').innerHTML = "<div class='data'><h2>Sorry, we couldn't find any companies<br> that match your search criteria :(</h2></div>";
+
+                });
+        }
+
+        function starter() {
+            $('#start').hide();
+            $('#form').show();
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function ifpsw() {
+            $('#start').hide();
+            $('#form').hide();
+            var password = getCookie('mydawkinspswd');
+            if (password != null && password != "") {
+                cookies = 1;
+                compare(password);
+            } else {
+                $('#start').show();
+                $('#form').hide();
+            }
+        }
+
+        function compare(char) {
+
+            //console.log(test);
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getTable.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [char, 1] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        tableName = obj.result;
+                        table = tableName.split("_");
+                        table1 = table[0];
+                        table2 = table[1];
+                        table3 = table[2];
+                        compareUsbuttons(table3);
+                        compareUs(table1);
+                        getTime(table2);
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+
+
+
+        }
+
+
+
+        function compareUsbuttons(table) {
+            if (table == "error") {
+                //reshow the password type in
+            }
+
+            table = table.split("#");
+            if (table[1] != "0") {
+                showData = true;
+                data = table[1];
+            }
+
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getData2.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [table[0], 2] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        comparer = obj.result;
+                        if (comparer != null) {
+                            treat(comparer)
+                        }
+                        //call next function here
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+        }
+
+
+        function compareUs(table) {
+            if (table == "error") {
+                //reshow the password type in
+            }
+
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getData.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [table, 2] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        comparer = obj.result;
+                        if (comparer != null) {
+                            showAll(comparer);
+                        }
+                        //call next function here
+                    }
+                    else {
+
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+        }
+
+
+        function getTime(table) {
+            if (table == "error") {
+                //reshow the password type in
+            }
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getTime.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [table, 2] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        comparer = obj.result;
+                        if (comparer != null) {
+                            showTime(comparer);
+                        }
+                        //call next function here
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+        }
+
+
+
+
+        function initArrayString(array) {
+            var array = [];
+            for (let i = 0; i < array + 1; i++) {
+                array.push('')
+            }
+            return array;
+        }
+        function initArrayNum(array) {
+            var arrays = [];
+            for (let i = 0; i < array + 1; i++) {
+                arrays.push(0);
+            }
+            return arrays;
+        }
+
+        function locationTime(arrayLength, location) {
+
+            var locationsNum = initArrayNum(arrayLength);
+            var locations = ['art'];
+
+            for (let j = 0; j < location.length; j++) {
+                for (let i = 0; i < locations.length; i++) {
+                    if (location[j][1] == locations[i]) {
+                        locationsNum[i] = locationsNum[i] + 1;
+                        break;
+                    } else if (i == locations.length - 1) {
+                        if (locations[0] == 'art') {
+                            locations[0] = location[j][1];
+                            locationsNum[0] = locationsNum[0] + 1;
+                        } else {
+                            locations.push(location[j][1]);
+                        }
+                    } else {
+                        continue
+                    }
+                }
+            }
+
+            var arr = [locations, locationsNum];
+
+            return arr;
+
+        }
+
+        function ButtonslocationTime(arrayLength, location) {
+
+            var locationsNum = initArrayNum(arrayLength);
+            var locations = ['art'];
+
+            for (let j = 0; j < location.length; j++) {
+                for (let i = 0; i < locations.length; i++) {
+                    if (location[j][1] == locations[i]) {
+                        locationsNum[i] = locationsNum[i] + 1;
+                        break;
+                    } else if (i == locations.length - 1) {
+                        if (locations[0] == 'art') {
+                            locations[0] = location[j][1];
+                            locationsNum[0] = locationsNum[0] + 1;
+                        } else {
+
+
+                            locations.push(location[j][1]);
+                        }
+                    } else {
+                        continue
+                    }
+                }
+            }
+
+            var arr = [locations, locationsNum];
+
+            return arr;
+
+        }
+
+
+        function makeArray(array) {
+            var arr = [];
+            for (let i = 0; i < array[0].length; i++) {
+                var arrTemp = [array[0][i], array[1][i]];
+                arr.push(arrTemp);
+            }
+            return arr;
+        }
+
+        function removeNull(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i][0] == null || array[i][0] == "  " || array[i][0] == " " || array[i][0] == "") {
+                    array[i][0] = "No Reference";
+                    return array;
+                }
+            }
+            return array;
+        }
+
+        function removeNull2(array) {
+            var returnArr = [array[0]];
+            for (let j = 0; j < array.length; j++) {
+                for (let k = 0; k < returnArr.length; k++) {
+                    if (returnArr[k][0] == array[j][0]) {
+                        if (returnArr[k][1] < array[j][1]) {
+                            returnArr[k][1] = array[j][1];
+                        }
+                        break;
+                    } else {
+                        if (k + 1 == returnArr.length) {
+                            returnArr.push(array[j]);
+                        }
+
+                    }
+                }
+            }
+
+            for (let i = 0; i < returnArr.length; i++) {
+
+                if (returnArr[i][0] == null || returnArr[i][0] == "  " || returnArr[i][0] == " " || returnArr[i][0] == "") {
+                    returnArr[i][0] = "No Reference";
+                    //return array;
+                }
+            }
+            return returnArr;
+        }
+
+        function treat(treat) {
+            var array = [];
+            for (let i = 0; i < treat[0].length; i++) {
+                if (i == 0) {
+                    array[0] = treat[0][i];
+                } else {
+                    for (let j = 0; j < array.length; j++) {
+                        if (array[j] == treat[0][i]) {
+                            break;
+                        } else if (j == array.length - 1) {
+                            array.push(treat[0][i]);
+                        }
+                    }
+                }
+            }
+
+            var arrAll = [];
+
+            for (let i = 0; i < array.length; i++) {
+                var p = [];
+                var ptry = 0;
+                for (let j = 0; j < treat[0].length; j++) {
+                    if (treat[0][j] == array[i]) {
+                        var me = [];
+                        ptry = ptry + 1;
+                        me[0] = treat[0][j];
+                        me[1] = treat[1][j];
+                        p.push(me);
+                    }
+                }
+                arrAll.push(locationTime(ptry, p));
+            }
+
+            var arrtemp = [];
+            buttons = array;
+            arrtemp.push(array);
+            arrtemp.push(arrAll);
+            buttonsArr = arrtemp;
+            button(buttons[0]);
+        }
+
+        
+        function removeroad(comps) {
+            var returner = [];
+            for (i = 0; i < comps.length; i++) {
+                if (comps[i] == null) {
+                    continue;
+                } else {
+                    road = comps[i][0].split(' ');
+                    road = road[road.length - 1];
+                    if (road == 'Road' || road == 'Drive' || road == 'Street') {
+                        continue;
+                    } else {
+                        returner.push(comps[i]);
+                    }
+                }
+            }
+            
+            return returner;
+        }
+
+        function removeroad2(comps) {
+            var returner = [];
+            for (i = 0; i < comps.length; i++) {
+                if (comps[i] == null) {
+                    continue;
+                } else {
+                    road = comps[i].split(' ');
+                    road = road[road.length - 1];
+                    if (road == 'Road' || road == 'Drive' || road == 'Street') {
+                        continue;
+                    } else {
+                        returner.push(comps[i]);
+                    }
+                }
+            }
+
+            return returner;
+        }
+
+        // Get companies
+
+        function treat2(treat) {
+            var array = [];
+            console.log(treat);
+            for (let i = 0; i < treat[0].length; i++) {
+                if (i == 0) {
+                    array[0] = treat[0][i];
+                } else {
+                    for (let j = 0; j < array.length; j++) {
+                        if (array[j] == treat[0][i]) {
+                            break;
+                        } else if (j == array.length - 1) {
+                            array.push(treat[0][i]);
+                        }
+                    }
+                }
+            }
+            companyDet = removeroad2(array);
+        }
+
+        function showButtons(buttons) {
+            var string = "";
+            var string2 = "";
+            var string3 = "";
+            var string4 = '<input type="radio" name="item" id="default " title="" checked>Choose A Company</input>';
+            for (let i = 0; i < buttons.length; i++) {
+                if (first = true) {
+                    logic.push("0");
+                }
+                percent = 100 / buttons.length;
+                //if (argument == 0) {
+                string3 = string3 + "<div id='" + buttons[i] + "3' class='buttonClass3'>Your Data will display soon</div>";
+                string2 = string2 + "<div id='" + buttons[i] + "2' onClick='button2(this.id)' class='buttonClass2'>Get Company Data </div>";
+                /*} else {
+                    string3 = string3 + "<div id='" + buttons[i] + "3' class='buttonClass4'>Your Data will display soon</div>";
+                    string2 = string2 + "<div id='" + buttons[i] + "2' onClick='button2(this.id)' class='buttonClass5'>Get Company Data </div>";
+                }*/
+                string4 = string4 + '<input type="radio" name="item" id="' + buttons[i] + '" title="' + buttons[i] + '">';
+                string = string + '<li><label class="label" for="' + buttons[i] + '" onClick="button(this.id)" id="' + buttons[i] + '">' + buttons[i] + '</label></li>';
+                //string = string + "<button id='" + buttons[i] + "' onClick='button(this.id)' class='buttonClass'>" + buttons[i] + "</button>";
+
+            }
+            first = false;
+            //document.getElementById('buttonss').innerHTML = string; //buttons code
+            //document.getElementById('buttonsss').innerHTML = string2;
+            document.getElementById('buttonssss').innerHTML = string3;
+            document.getElementById('button10').innerHTML = string;
+            document.getElementById('button9').innerHTML = string4;
+            document.getElementById('button102').innerHTML = string;
+            document.getElementById('button92').innerHTML = string4;
+            /*
+
+
+            if (once == true) {
+                document.getElementById('remove').style.display = 'block';
+                once = false;
+            }*/
+            var me = shorten(buttonsArr[1][0]);
+            me = makeArray(me);
+            //google.charts.setOnLoadCallback(drawChart7(me));
+
+        }
+
+        function showReferButtons(buttons) {
+            var string = '<li><label class="label" for="all" onClick="referShow(this.id)" id="all">All</label></li>';
+            var string2 = '<input type="radio" name="item" id="default " title="" checked>Choose A Company</input><input type="radio" name="item" id="all" title="All">';
+            for (let i = 0; i < buttons.length; i++) {
+                if (buttons[i] + '' != 'null') {
+                    string2 = string2 + '<input type="radio" name="item" id="' + buttons[i] + '" title="' + buttons[i] + '">';
+                    string = string + '<li><label class="label" for="' + buttons[i] + '" onClick="referShow(this.id)" id="' + buttons[i] + '.' + '">' + buttons[i] + '</label></li>';
+                    //string = string + "<div id='" + buttons[i] + "." + "' onClick='referShow(this.id)' class='referClass'>" + buttons[i] + "</div>";
+                }
+            }
+            document.getElementById('refer10').innerHTML = string;
+            document.getElementById('refer9').innerHTML = string2;
+            document.getElementById('refer102').innerHTML = string;
+            document.getElementById('refer92').innerHTML = string2;
+
+        }
+
+        function showPageButtons(buttons) {
+            var string = '<li><label class="label" for="all" onClick="pageShow(this.id)" id="all">All</label></li>';
+            var string2 = '<input type="radio" name="item" id="default " title="" checked>Choose A Company</input><input type="radio" name="item" id="all" title="All">';
+            for (let i = 0; i < buttons.length; i++) {
+                if (buttons[i] + '' != 'null') {
+                    string2 = string2 + '<input type="radio" name="item" id="' + buttons[i] + '" title="' + buttons[i] + '">';
+                    string = string + '<li><label class="label" for="' + buttons[i] + '" onClick="pageShow(this.id)" id="' + buttons[i] + '.' + '">' + buttons[i] + '</label></li>';
+                    //string = string + "<div id='" + buttons[i] + "." + "' onClick='referShow(this.id)' class='referClass'>" + buttons[i] + "</div>";
+                }
+            }
+            document.getElementById('page10').innerHTML = string;
+            document.getElementById('page9').innerHTML = string2;
+            document.getElementById('page102').innerHTML = string;
+            document.getElementById('page92').innerHTML = string2;
+
+        }
+
+
+
+
+
+
+        function shorten(array) {
+            var arrayNew = [];
+            for (let i = 0; i < array[0].length; i++) {
+                arrayNew[i] = array[1][i];
+            }
+            array[1] = arrayNew;
+            return array;
+        }
+
+        function buttons2(arr) {
+            //make display none and show "order placed" and send email
+
+            var string = "";
+            var string2 = '<input type="radio" name="item" id="default " title=""  checked>Choose A Page</input>';
+
+            for (let i = 0; i < arr.length; i++) {
+
+
+                string2 = string2 + '<input type="radio" name="item" id="' + arr[i] + '" title="' + arr[i] + '">';
+                string = string + '<li><label class="label" for="' + arr[i] + '" onClick="timeB(this.id)" id="' + arr[i] + '">' + arr[i] + '</label></li>';
+
+                //string = string + "<div id='" + arr[i] + "' onClick='timeB(this.id)' class='timeClass'>" + arr[i] + "</div>";
+
+            }
+            document.getElementById('time10').innerHTML = string;
+            document.getElementById('time9').innerHTML = string2;
+            document.getElementById('time102').innerHTML = string;
+            document.getElementById('time92').innerHTML = string2;
+            //document.getElementById('time').innerHTML = string;
+            timeB(arr[1]);
+
+        }
+
+        function button(arr) {
+            //document.getElementById('myChart').style.display = 'block';
+            //document.getElementById('remove').style.display = 'none';
+            for (let i = 0; i < buttonsArr[0].length; i++) {
+
+                if (buttonsArr[0][i] == arr) {
+                    var hide = document.querySelectorAll('.buttonClass3');
+                    var hide2 = document.querySelectorAll('.buttonClass2');
+                    for (k of hide) {
+                        document.getElementById(k.id).style.display = "none";
+                    }
+                    /*
+                    for (l of hide2) {
+                        document.getElementById(l.id).style.display = "none";
+                    }*/
+                    /*
+                    if (logic[i] == "0") {
+                        document.getElementById(arr + "2").style.display = "block";
+                    } else {
+                        document.getElementById(arr + "3").style.display = "block";
+                    }*/
+
+                    var me = shorten(buttonsArr[1][i]);
+                    me = makeArray(me);
+                    buttonfr = me;
+                    google.charts.setOnLoadCallback(drawChart7(buttonfr, width, height));
+                    let btns = document.querySelectorAll('button');
+
+                    /*
+                    for (j of btns) {
+                        document.getElementById(j.id).style.backgroundColor = "white";
+                        document.getElementById(j.id).style.color = "black";
+                    }
+                    document.getElementById(arr).style.backgroundColor = "black";
+                    document.getElementById(arr).style.color = "white";
+                    */
+
+
+                }
+            }
+        }
+
+        function referShow(arr) {
+            var tester = [];
+            var holder = arr;
+            var hold = arr.split('.');
+            arr = hold[0];
+            for (let j = 0; j < collection.length; j++) {
+                if (global[4][j] == arr) {
+                    var me = [];
+                    me[0] = global[0][j];
+                    me[1] = collection[j][1];
+                    tester.push(me);
+                }
+            }
+
+            if (arr == 'all') {
+                var referrer = locationTime(collector, collection);
+                referrer = makeArray(referrer);
+                referrer = removeNull(referrer);
+                referfr = referrer;
+                google.charts.setOnLoadCallback(drawChart(referfr, width, height));
+            } else {
+                var referrer = locationTime(collector, tester);
+                referrer = makeArray(referrer);
+                referrer = removeNull(referrer);
+                referfr = referrer;
+                google.charts.setOnLoadCallback(drawChart(referfr, width, height));
+            }
+
+
+
+
+            /*
+            var hide = document.querySelectorAll('.referClass');
+
+            for (i of hide) {
+                document.getElementById(i.id).style.backgroundColor = "white";
+                document.getElementById(i.id).style.color = "black";
+            }
+            document.getElementById(holder).style.backgroundColor = "black";
+            document.getElementById(holder).style.color = "white";*/
+        }
+
+        function pageShow(arr) {
+            var tester = [];
+            var holder = arr;
+            var hold = arr.split('.');
+            arr = hold[0];
+            for (let j = 0; j < collectionPage.length; j++) {
+                if (global[4][j] == arr) {
+                    var me = [];
+                    me[0] = global[0][j];
+                    me[1] = collectionPage[j][1];
+                    tester.push(me);
+                }
+            }
+
+            if (arr == 'all') {
+                var referrer = locationTime(collectorPage, collectionPage);
+                referrer = makeArray(referrer);
+                referrer = removeNull(referrer);
+                referfr = referrer;
+                google.charts.setOnLoadCallback(drawChart3(referfr, width, height));
+            } else {
+                var referrer = locationTime(collectorPage, tester);
+                referrer = makeArray(referrer);
+                referrer = removeNull(referrer);
+                referfr = referrer;
+                google.charts.setOnLoadCallback(drawChart3(referfr, width, height));
+            }
+        }
+
+
+        function timeB(arr) {
+            //document.getElementById('myChart').style.display = 'block';
+            avg = 0;
+            for (let i = 0; i < times.length; i++) {
+
+                if (times[i] == arr) {
+                    var arrayy = [];
+                    for (let j = 0; j < timeArr[i].length; j++) {
+                        var temp = [timeArr[i][j], timeArr[i][j + 1]];
+                        avg = avg + Number(timeArr[i][j + 1]);
+                        j = j + 1;
+                        arrayy.push(temp);
+                    }
+                    avg = avg / arrayy.length;
+                    avg = avg.toFixed(2);
+                    document.getElementById('avg').innerHTML = '<div class="average">Average time on this page:' + avg + ' Seconds<div>';
+                    arrfr = arrayy;
+                    google.charts.setOnLoadCallback(drawChart8(arrfr, width, height));
+                    //let btns = document.querySelectorAll('.timeClass');
+
+                    /*
+                    for (j of btns) {
+                        document.getElementById(j.id).style.backgroundColor = "black";
+                        document.getElementById(j.id).style.color = "white";
+                    }
+                    document.getElementById(arr).style.backgroundColor = "white";
+                    document.getElementById(arr).style.color = "black";
+                    */
+                }
+            }
+        }
+
+        function signout() {
+            document.cookie = "mydawkinspswd=" + "" + ";path=https://dawkinspgh.com/web6pm/";
+            window.location.href = "http://www.dawkinspgh.com/dashboard.html";
+        }
+
+        function showTime(comp) {
+            var array = [];
+            for (let i = 0; i < comp[0].length; i++) {
+                if (i == 0) {
+                    array[0] = comp[1][i];
+                } else {
+                    for (let j = 0; j < array.length; j++) {
+                        if (array[j] == comp[1][i]) {
+                            break;
+                        } else if (j == array.length - 1) {
+                            array.push(comp[1][i]);
+                        }
+                    }
+                }
+            }
+
+            var arrAll = [];
+
+            for (let j = 0; j < array.length; j++) {
+                var temp = [];
+                for (let i = 0; i < comp[1].length; i++) {
+                    if (comp[1][i] == array[j]) {
+                        var me = comp[0][i];
+                        var mee = comp[2][i];
+                        temp.push(me);
+                        temp.push(Number(mee))
+                    }
+                }
+                arrAll.push(temp)
+            }
+            times = array
+            timeArr = arrAll;
+            buttons2(times);
+        }
+
+        function showComp() {
+            showcomp = 1;
+            showip = 0;
+            google.charts.setOnLoadCallback(drawChart2(visitsComp, width, height));
+        }
+
+        function returnFilter(loc) {
+            var filler = [];
+            if (showcomp == 1) {
+                if (loc == '5') {
+                    for (i = 0; i < visitsComp.length; i++) {
+                        if (visitsComp[i][1] < 6) {
+                            filler.push(visitsComp[i]);
+                        }
+                    }
+                } else if (loc == 'all') {
+                    filler = visitsComp;
+                } else if (loc == '10') {
+                    for (i = 0; i < visitsComp.length; i++) {
+                        if (visitsComp[i][1] > 5 && visitsComp[i][1] < 11) {
+                            filler.push(visitsComp[i]);
+                        }
+                    }
+                } else if (loc == '15') {
+                    for (i = 0; i < visitsComp.length; i++) {
+                        if (visitsComp[i][1] > 10 && visitsComp[i][1] < 16) {
+                            filler.push(visitsComp[i]);
+                        }
+                    }
+                } else if (loc == '20') {
+                    for (i = 0; i < visitsComp.length; i++) {
+                        if (visitsComp[i][1] > 15 && visitsComp[i][1] < 21) {
+                            filler.push(visitsComp[i]);
+                        }
+                    }
+                } else {
+                    for (i = 0; i < visitsComp.length; i++) {
+                        if (visitsComp[i][1] > 20) {
+                            filler.push(visitsComp[i]);
+                        }
+                    }
+                }
+            } else {
+                if (loc == '5') {
+                    for (i = 0; i < visitsfr.length; i++) {
+                        if (visitsfr[i][1] < 6) {
+                            filler.push(visitsfr[i]);
+                        }
+                    }
+                } else if (loc == 'all') {
+                    filler = visitsfr;
+                } else if (loc == '10') {
+                    for (i = 0; i < visitsfr.length; i++) {
+                        if (visitsfr[i][1] > 5 && visitsfr[i][1] < 11) {
+                            filler.push(visitsfr[i]);
+                        }
+                    }
+                } else if (loc == '15') {
+                    for (i = 0; i < visitsfr.length; i++) {
+                        if (visitsfr[i][1] > 10 && visitsfr[i][1] < 16) {
+                            filler.push(visitsfr[i]);
+                        }
+                    }
+                } else if (loc == '20') {
+                    for (i = 0; i < visitsfr.length; i++) {
+                        if (visitsfr[i][1] > 15 && visitsfr[i][1] < 21) {
+                            filler.push(visitsfr[i]);
+                        }
+                    }
+                } else {
+                    for (i = 0; i < visitsfr.length; i++) {
+                        if (visitsfr[i][1] > 20) {
+                            filler.push(visitsfr[i]);
+                        }
+                    }
+                }
+            }
+            google.charts.setOnLoadCallback(drawChart2(filler, width, height));
+        }
+
+        function locationFilter(loc) {
+            var filler = [];
+            if (loc == '5') {
+                for (i = 0; i < locationsfr.length; i++) {
+                    if (locationsfr[i][1] < 6) {
+                        filler.push(locationsfr[i]);
+                    }
+                }
+            } else if (loc == 'all') {
+                filler = locationsfr;
+            } else if (loc == '10') {
+                for (i = 0; i < locationsfr.length; i++) {
+                    if (locationsfr[i][1] > 5 && locationsfr[i][1] < 11) {
+                        filler.push(locationsfr[i]);
+                    }
+                }
+            } else if (loc == '15') {
+                for (i = 0; i < locationsfr.length; i++) {
+                    
+                    if (locationsfr[i][1] > 10 && locationsfr[i][1] < 16) {
+                        filler.push(locationsfr[i]);
+                    }
+                }
+            } else if (loc == '20') {
+                for (i = 0; i < locationsfr.length; i++) {
+                    if (locationsfr[i][1] > 15 && locationsfr[i][1] < 21) {
+                        filler.push(locationsfr[i]);
+                    }
+                }
+            } else {
+                for (i = 0; i < locationsfr.length; i++) {
+                    if (locationsfr[i][1] > 20) {
+                        filler.push(locationsfr[i]);
+                    }
+                }
+            }
+            google.charts.setOnLoadCallback(drawChart5(filler, width, height));
+        }
+
+        function showIp() {
+            showcomp = 0;
+            showip = 1;
+            google.charts.setOnLoadCallback(drawChart2(visitsfr, width, height));
+        }
+        function showAll(comp) {
+            if (cookies == 0) {
+                document.cookie = "mydawkinspswd=" + char + ";path=https://dawkinspgh.com/web6pm/";
+                
+            }
+
+            var companies = [comp[4], comp[0]];
+            treat2(companies);
+            global = comp;
+            var soon = 0;
+            var visits = [];
+            var refer = [];
+            var page = [];
+            var location = [];
+            var p = [];
+            var locTry = 0;
+            var refTry = 0;
+            var pageTry = 0;
+            var ptry = 0;
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                var we = [];
+                we[1] = parseInt(comp[2][i]);
+                we[0] = comp[4][i];
+                me[0] = comp[0][i];
+                me[1] = parseInt(comp[2][i]);
+                visits[i] = me;
+                visitsComp[i] = we;
+            }
+
+            if (showData = true) {
+                $("#onlys").show();
+            }
+
+            visitsComp = removeNull2(visitsComp);
+            visitsComp = removeroad(visitsComp);
+            visits = removeNull2(visits);
+            visitsfr = visits;
+            google.charts.setOnLoadCallback(drawChart2(visitsfr, width, height));
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                locTry = locTry + 1;
+                me[0] = comp[0][i];
+                me[1] = comp[1][i];
+                location[i] = me;
+            }
+
+            locationsfr = locationTime(locTry, location);
+            locationsfr = makeArray(locationsfr);
+            locationsfr = removeNull(locationsfr);
+            
+            
+            google.charts.setOnLoadCallback(drawChart5(locationsfr, width, height));
+
+
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                ptry = ptry + 1;
+                me[0] = comp[0][i];
+                me[1] = comp[4][i];
+                p[i] = me;
+            }
+
+            var ps = locationTime(ptry, p);
+            ps = makeArray(ps);
+            ps = removeNull(ps);
+            psfr = ps;
+            google.charts.setOnLoadCallback(drawChart4(psfr, width, height));
+
+
+            var tooter = [];
+            tooter[0] = comp[4][0];
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                refTry = refTry + 1;
+                me[0] = comp[0][i];
+                var splitter = comp[3][i].split('referrer: ');
+
+                me[1] = splitter[1];
+                refer[i] = me;
+            }
+
+            collection = refer;
+            collector = refTry;
+            var referrer = locationTime(refTry, refer);
+            referrer = makeArray(referrer);
+            referrer = removeNull(referrer);
+            referfr = referrer;
+            google.charts.setOnLoadCallback(drawChart(referfr, width, height));
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                me[0] = comp[0][i];
+                pageTry = pageTry + 1;
+                var splitter = comp[3][i].split('Buttons: ');
+                splitter = splitter[0];
+                splitter = splitter.split('Name: ');
+                me[1] = splitter[1];
+                page[i] = me;
+            }
+
+            collectionPage = page;
+            collectorPage = pageTry;
+            var pages = locationTime(pageTry, page);
+            pages = makeArray(pages);
+            pages = removeNull(pages);
+            pagesfr = pages;
+            google.charts.setOnLoadCallback(drawChart3(pagesfr, width, height))
+
+            $('#navHolder').show();
+
+            var windowh = window.matchMedia("(max-width: 750px)")
+
+            navBar(windowh) // Call listener function at run time
+            windowh.addListener(navBar);
+
+            $('#only').hide();
+            $('#onlys').css('color', 'gold');
+            $('#start').hide();
+            $('#wrong').hide();
+            $('#form').hide();
+
+        }
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+
+        // google.charts.setOnLoadCallback(drawChart4);
+
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart(refer, widths, heights) {
+
+            // TO DO //
+
+            //For all in refer
+            //If refer is less than date and greater then between date
+            //show data and say the dates looked at 
+
+            //Proportionate to the highest number. Highest number = 100%
+
+            //////////
+
+            console.log(refer);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Referrer');
+            data.addColumn('number', 'Uses');
+            data.addRows(refer);
+
+            // Set chart options
+            var count = refer[0][1];
+            for (var i = 1; i < refer.length; i++) {
+                if (refer[i][1] > count) {
+                    count = refer[i][j];
+                }
+            }
+            var carry = "";
+            for (var i = 0; i < refer.length; i++) {
+                if (refer[i][0] != 'null') {
+                    refer[i][0] = refer[i][0].split("//");
+                    if (refer[i][0].length > 1) {
+                        refer[i][0] = refer[i][0][1].split("/");
+                    }
+                    var j = 0;
+                    if (refer[i][1] != count) {
+                        j = refer[i][1] / count;
+                    } else {
+                        j = 1;
+                    }
+                    var size = ".68rem";
+                    if (j < .02) {
+                        size = ".45rem";
+                    }
+                    /*if (refer[i][1] < 10) {
+                        refer[i][1] = '0' + refer[i][1];
+                    }*/
+                    console.log(j);
+                    carry = carry + '<tr><th style="font-size: .68rem;"scope="row">' + refer[i][0][0] + '<td style="--size: 0' + j + '; color: black; font-size: ' + size + '"> ' + refer[i][1] + ' </td>'
+                }
+            }
+            var options = {
+                'title': 'Most used Referrers',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Refererrer', titleTextStyle: { color: 'black' } },
+
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            document.getElementById('chart_div').innerHTML = '<table style="background-color: white; padding: 10%;"class="charts-css column show-heading show-labels show-4-secondary-axes" id="my-chart"><caption> Most Used Referrers </caption><thead><tr><th scope="col"> Country </th><th scope="col"> Gold </th><th scope="col"> Silver </th><th scope="col"> Bronze </th></tr></thead><tbody id="motion-effect">' + carry + '</tbody></table>' //<div style="text-align: center; margin-top: 1%; color: white;"> Choose Dates &nbsp;<input type="date" name="dateofbirth" id="dateofbirth" >&nbsp;<input type="date" name="dateofbirth" id="dateofbirth"></div>';
+            // Instantiate and draw our chart, passing in some options.
+            //var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            //chart.draw(data, options);
+        }
+
+        function drawChart2(visits, widths, heights) {
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Visitor');
+            data.addColumn('number', 'Returning Visits');
+
+            data.addRows(visits);
+
+            // Set chart options
+            var options = {
+                'title': 'Returning Vistors (BY IP)',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Visits', titleTextStyle: { color: 'black' } },
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+        }
+
+        function drawChart7(visits, widths, heights) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Buttons');
+            data.addColumn('number', 'Clicks');
+
+            data.addRows(visits);
+
+            // Set chart options
+            var options = {
+                'title': 'Buttons Clicks',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Clicks', titleTextStyle: { color: 'black' } },
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div6'));
+            chart.draw(data, options);
+        }
+
+        function drawChart8(visits, widths, heights) {
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'IP');
+            data.addColumn('number', 'Time');
+
+            data.addRows(visits);
+
+            // Set chart options
+            var options = {
+                'title': 'Time on Page',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Time (Seconds)', titleTextStyle: { color: 'black' } },
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div8'));
+            chart.draw(data, options);
+        }
+
+        function drawChart3(pages, widths, heights) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Page', 'black');
+            data.addColumn('number', 'Visits', 'black');
+            data.addRows(pages);
+
+            // Set chart options
+            var options = {
+                'title': 'Most Popular Page',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Visits', titleTextStyle: { color: 'black' } },
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div3'));
+            chart.draw(data, options);
+        }
+
+        function drawChart4(ps, widths, heights) {
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Company');
+            data.addColumn('number', 'Amount');
+            data.addRows(ps);
+
+            // Set chart options
+            var options = {
+                'title': 'Name of Company',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Company Visits', titleTextStyle: { color: 'black' } },
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div4'));
+            chart.draw(data, options);
+        }
+
+        function drawChart5(locate, widths, heights) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Location');
+            data.addColumn('number', 'Vistiors');
+            data.addRows(locate);
+            /*
+
+                'width': 900,
+                'height': 700,
+             */
+            // Set chart options
+            var options = {
+                'title': 'Most popular location of your visitor',
+                'width': widths,
+                'height': heights,
+                'hAxis': { title: 'Visits by Location (City, State)', titleTextStyle: { color: 'black' } },
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div5'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>

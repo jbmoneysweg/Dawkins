@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript">
+        api_key: 'AQVmcRZ7kFJJTxmjnONrCYu8l1X1LWiUEKJdTd7L7Pt-TlhHtfZJpxOwg0sTzbwS7Qmj4WH9YEGgnzwVxvHdwB0WI6tdlzbM4MnMfyfeBRo9H1DNDEwQ1iV57lYP_Rpf6amfNFdHaBou15ee9kwF3MQLYPHKj78HN4E_5zGtOnPCzr7yNl8Lw-RYuQLANX4GAU3vjHW3yLDGkfwtDq4_2LH38cZQ7-1HAcLR4mv6-1rVXnczEMcE6TLhuR5ASvw7eaL3_dkrNHQEABa1d7Hly7Xo4c9910LND4yCDmBcxsmW9VErZGoyAEKJRXmv1aCNHMyWkt_E8l9sjsQ6O3hbwDU7YLN0wA'
+    </script>
+    <script>
+        /*fetch(`https://api.linkedin.com/v2/search?q=AeroTech&type=company`, { mode: 'no-cors' }, {
+            headers: {
+                "Authorization": "AQVmcRZ7kFJJTxmjnONrCYu8l1X1LWiUEKJdTd7L7Pt-TlhHtfZJpxOwg0sTzbwS7Qmj4WH9YEGgnzwVxvHdwB0WI6tdlzbM4MnMfyfeBRo9H1DNDEwQ1iV57lYP_Rpf6amfNFdHaBou15ee9kwF3MQLYPHKj78HN4E_5zGtOnPCzr7yNl8Lw-RYuQLANX4GAU3vjHW3yLDGkfwtDq4_2LH38cZQ7-1HAcLR4mv6-1rVXnczEMcE6TLhuR5ASvw7eaL3_dkrNHQEABa1d7Hly7Xo4c9910LND4yCDmBcxsmW9VErZGoyAEKJRXmv1aCNHMyWkt_E8l9sjsQ6O3hbwDU7YLN0wA"
+            }
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    // Parse the JSON data from the LinkedIn API response
+                    response.json().then(data => {
+                        console.log(data);
+                    });
+                }
+            });*/
+
+            function searchCompanies(company) {
+           /*
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-RapidAPI-Key': 'e789188e64msh375a74d0aed7a2cp1e3481jsn088add1723c4',
+                    'X-RapidAPI-Host': 'german-company-data.p.rapidapi.com'
+                }
+            };
+
+            fetch('https://german-company-data.p.rapidapi.com/companies/DEVFCLQFW054/data', options)
+                .then(response => response.json())
+                .then(response => console.log(response))
+                .catch(err => console.error(err));
+
+        */
+
+               
+
+                company = company.split(' ');
+                var comp = '';
+                for (i = 0; i < company.length; i++) {
+                    comp = comp.concat(company[i]);
+                }
+                comp = comp + '.com';
+                var url = 'https://companies-datas.p.rapidapi.com/v2/company?query=' + comp;
+            
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'e789188e64msh375a74d0aed7a2cp1e3481jsn088add1723c4',
+                    'X-RapidAPI-Host': 'companies3.p.rapidapi.com'
+                }
+            };
+             //https://companies3.p.rapidapi.com/v2/company?query=amazon.com
+            //https://companies-datas.p.rapidapi.com/v2/company?query=amazon.com
+                fetch(url, options)
+                .then(response => response.json())
+                .then(response => console.log(response))
+                .catch(err => console.error(err));
+            /*
+            const searchCriteria = {
+                keywords: "software",
+                industry: "technology",
+                sortBy: "relevance",
+            };
+            IN.API.CompaniesSearch()
+                .fields("id,name,industry,employee_count_range,location")
+                .params(searchCriteria)
+                .result(function (result) {
+                    console.log(result);
+                })
+                .error(function (error) {
+                    console.error(error);
+                });
+                */
+
+        }
+        //IN.Event.on(IN, "auth", searchCompanies);
+    </script>
+</head>
+
+    <body>
+        <button onclick="searchCompanies('amazon')">Click me</button>
+    </body>
+    
+</html>

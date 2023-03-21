@@ -1,0 +1,325 @@
+﻿<html>
+<head>
+    <title>Dawkins</title>
+
+    <!-- Dawkins Script, Owned and created by Jeremiah Booker. Maintained by Dawkins PGH -->
+    <script src="https://www.dawkinspgh.com/dawkinsmain.js"></script>
+    <!-- End of Script -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+
+    <link rel="icon" href="dawkinslogo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="dawkinslogo.ico" type="image/x-icon" />
+    <style>
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Open Sans'), local('OpenSans'), url('https://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #imageSection {
+            /* The image used */
+            background-image: url("https://www.dawkinspgh.com/skyline.jpg");
+            /* Set a specific height */
+            min-height: 100%;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #middleSection {
+            background-image: url("/dd.JPG");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: black;
+            margin-top: -12em;
+            z-index: -1;
+            height: 100%;
+        }
+
+        #spacer {
+            background-color: black;
+            height: 5%;
+        }
+
+        #navSection {
+            height: 2.6em;
+            margin-top: -4em;
+            padding-bottom: .5em;
+            background-color: white;
+            padding-top: 1.25em;
+        }
+
+        #dawkins {
+            height: 2.75%;
+            padding-bottom: 1.3%;
+            background-color: white;
+            padding-top: 1.25%;
+        }
+
+        #aboutSection {
+            padding-top: 5%;
+            padding-bottom: 20%;
+            background-color: black;
+        }
+
+        #servicesSection {
+            padding-top: 5%;
+            background-color: black;
+            border-top: 1px solid grey;
+            padding-bottom: 20%;
+        }
+
+        .navLink {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: darkgoldenrod;
+            font-size: 1.3em;
+            margin-left: 5%;
+            text-decoration: none;
+        }
+
+        .navLink4 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            margin-left: 2%;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+            .navLink4:hover {
+                color: darkgoldenrod;
+            }
+
+        .navLink5 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            margin-left: 2%;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+            .navLink5:hover {
+                color: darkgoldenrod;
+            }
+
+        .navLink3 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .navLink2 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            font-size: 1.3em;
+            margin-left: 2%;
+            display: inline-block;
+        }
+
+            .navLink2:hover {
+                color: darkgoldenrod;
+                cursor: pointer;
+            }
+
+        #logo {
+            float: right;
+            margin-right: 5%;
+        }
+
+        .titleContainer {
+            opacity: .8;
+            background-color: black;
+            position: relative;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+            width: 20em;
+            border-radius: 20px;
+            top: 24em;
+            left: 10%;
+        }
+
+        @media only screen and (max-height: 750px) {
+            .titleContainer {
+                top: 16em;
+            }
+        }
+
+        .image1 {
+            z-index: 1;
+        }
+
+        .title2 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 2%;
+            /*margin-left: 7%;*/
+            line-height: 1.5em;
+            font-size: 1.45em;
+            color: white;
+        }
+
+        .title {
+            /*font-family: 'open sans',arial,sans-serif;*/
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+        }
+
+        #aboutTitle {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 3.3em;
+            color: #EDB211;
+            font-weight: 400;
+            margin-left: 10%;
+        }
+
+        #serviceTitle {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 3.3em;
+            color: #EDB211;
+            font-weight: 400;
+            margin-left: 10%;
+        }
+
+
+
+        .paragraphContainer {
+            margin-top: 4%;
+            margin-left: 11%;
+            margin-right: 13%;
+        }
+
+        .ul {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 2.4em;
+            color: white;
+            font-weight: 300;
+            display: inline-block;
+            width: 55%;
+            margin-top: 2%;
+            line-height: 1em;
+        }
+
+        ul {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.9em;
+            color: white;
+            font-weight: 300;
+        }
+
+        .float {
+            float: right;
+            margin-right: -3%;
+            vertical-align: top;
+            margin-top: -6%;
+        }
+
+        @media screen and (max-width: 1380px) {
+            .paragraphContainer {
+                margin-left: 10% !important;
+                margin-right: 2% !important;
+            }
+
+            .ul {
+                font-size: 1.7em;
+            }
+
+            .float {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .titleContainer {
+                top: 200px !important;
+            }
+
+            .paragraphContainer {
+                margin-left: 10% !important;
+                margin-right: 2% !important;
+            }
+        }
+    </style>
+    <script>
+        function about() {
+            document.getElementById('aboutSection').scrollIntoView();
+            // will scroll to 4th h3 element
+        }
+        function services() {
+            document.getElementById('servicesSection').scrollIntoView();
+            // will scroll to 4th h3 element
+        }
+    </script>
+</head>
+<body>
+    <section id="imageSection">
+        <div class="titleContainer">
+            <div class="title"><img src="https://www.dawkinspgh.com/golddawkin.PNG" height="98" width="98" /></div>
+            <br />
+            <div class="title2">TRANSFORMING THE WAY YOU OPTIMIZE YOUR DATA.</div>
+        </div>
+    </section>
+    <section id="navSection">
+        <a class="navLink" href="https://www.dawkinspgh.com/">Home</a><div class="navLink2" onclick="about()">About</div><div class="navLink2" onclick="services()">Services</div><a class="navLink5" href="https://www.dawkinspgh.com/blog.html">Blog</a><a class="navLink4" href="https://www.dawkinspgh.com/dashboard.html">Sign in</a><div id="logo"><img src="dawkinslogo.png" height="33" width="33" /></div>
+
+    </section>
+    <section id="aboutSection">
+        <div id="aboutTitle"><b>What is Dawkins?</b></div>
+        <div class="paragraphContainer">
+            <div class="ul">
+                Dawkins is a data collection service that is built on 100% proprietary technology. Our technology is a javascript tag inserted on your website that collects multiple data points and visitor interactions.
+            <br /><br />
+
+                Our clients/partners will have access to this data which updates in real-time and our data analysts will present the data to our clients/partners (B2B & B2C) to present growth goals and help expose behavioral gaps.
+
+
+            </div><div class="float"><img src="https://www.dawkinspgh.com/pittsburghwebsite.png" height="500" width="500" /></div>
+
+        </div>
+    </section>
+    <section id="middleSection">
+    </section>
+    <section id="spacer">
+    </section>
+    <section id="servicesSection">
+        <div id="serviceTitle"><b>How we can help you..</b></div>
+        <div class="paragraphContainer">
+            <div class="ul">
+                <br />
+                We will provide you with personalized, unique, and useful website visitor information, allowing you to track everything you couldn't before.
+
+            </div><div class="float"><img src="https://www.dawkinspgh.com/Dawkins4thQ .png" height="500" width="500" /></div>
+
+        </div>
+
+
+    </section>
+    <section id="dawkins">
+        <div class="navLink3">@Dawkins 2023</div>
+
+    </section>
+</body>
+</html>

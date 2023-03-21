@@ -1,0 +1,663 @@
+﻿<html>
+<head>
+    <title>Dawkins Blog</title>
+
+    <!-- Dawkins Script, Owned and created by Jeremiah Booker. Maintained by Dawkins PGH -->
+    <script src="https://www.dawkinspgh.com/dawkinsmain.js"></script>
+    <!-- End of Script -->
+
+    <link rel="icon" href="dawkinslogo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="dawkinslogo.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #imageSection {
+            /* The image used */
+            background-image: url("skyline.jpg");
+            /* Set a specific height */
+            min-height: 100%;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #navSection {
+            height: 2.6em;
+            margin-top: -4em;
+            padding-bottom: 0em;
+            background-color: white;
+            padding-top: 1.25em;
+        }
+
+        #dawkins {
+            height: 2.75%;
+            padding-bottom: 1.3%;
+            background-color: white;
+            padding-top: 1.25%;
+        }
+
+        #aboutSection {
+            padding-top: 1%;
+            padding-bottom: 5%;
+            background-color: black;
+        }
+
+        #servicesSection {
+            padding-top: 5%;
+            background-color: black;
+            border-top: 1px solid grey;
+            padding-bottom: 15%;
+        }
+
+        .navLink {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            font-size: 1.3em;
+            margin-left: 5%;
+            text-decoration: none;
+        }
+
+            .navLink:hover {
+                color: darkgoldenrod;
+                cursor: pointer;
+            }
+
+        .navLink4 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            margin-left: 2%;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+            .navLink4:hover {
+                color: darkgoldenrod;
+            }
+
+        .navLink3 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .navLink2 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: black;
+            font-size: 1.3em;
+            margin-left: 2%;
+            display: inline-block;
+        }
+
+            .navLink2:hover {
+                color: darkgoldenrod;
+                cursor: pointer;
+            }
+
+        .navLink5 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            color: darkgoldenrod;
+            margin-left: 2%;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+            .navLink5:hover {
+                color: darkgoldenrod;
+            }
+
+        #logo {
+            float: right;
+            margin-right: 5%;
+        }
+
+        .titleContainer {
+            opacity: .8;
+            background-color: black;
+            position: relative;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+            width: 20em;
+            border-radius: 20px;
+            top: 24em;
+            left: 10%;
+        }
+
+        @media only screen and (max-height: 750px) {
+            .titleContainer {
+                top: 16em;
+            }
+        }
+
+        .image1 {
+            z-index: 1;
+        }
+
+        .title2 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 2%;
+            /*margin-left: 7%;*/
+            line-height: 1.5em;
+            font-size: 1.45em;
+            color: white;
+        }
+
+        .title {
+            /*font-family: 'open sans',arial,sans-serif;*/
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+        }
+
+        #aboutTitle {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 2.7em;
+            color: #EDB211;
+            font-weight: 400;
+            margin-left: 10%;
+        }
+
+        #serviceTitle {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 2.7em;
+            color: #EDB211;
+            font-weight: 400;
+            margin-left: 10%;
+        }
+
+
+
+        .paragraphContainer {
+            margin-top: 4%;
+            margin-left: 11%;
+            margin-right: 13%;
+        }
+
+        .ul {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 2em;
+            color: white;
+            font-weight: 300;
+            display: inline-block;
+            width: 55%;
+            margin-top: 2%;
+            line-height: 1em;
+        }
+
+        ul {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.9em;
+            color: white;
+            font-weight: 300;
+        }
+
+        .float {
+            float: right;
+            margin-right: -3%;
+            vertical-align: top;
+            margin-top: -6%;
+        }
+
+        .blogs {
+            font-family: 'Oswald', sans-serif;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 5vh;
+            color: white;
+        }
+
+        .div1 {
+            display: inline-block;
+            font-size: 1vw;
+            color: black;
+            font-family: 'Oswald', sans-serif;
+        }
+
+
+
+            .div1:hover {
+                -webkit-filter: blur(2px);
+                filter: blur(2px);
+            }
+
+
+        .blogOne {
+            display: inline-block;
+            margin-top: 50px;
+            border: 1px solid lightgrey;
+        }
+
+
+
+        .blogOone {
+            display: inline-block;
+            margin-top: 50px;
+            border: 1px solid lightgrey;
+        }
+
+
+
+        .blogOnee {
+            display: none;
+        }
+
+        .blogOonee {
+            display: none;
+        }
+
+        .blogthre {
+            display: none;
+        }
+
+        .blogothre {
+            display: none;
+        }
+
+        .blogThree {
+            display: none;
+        }
+
+        .div2 {
+            display: inline-block;
+            margin-left: 4vw;
+            font-size: 1vw;
+            color: black;
+            font-family: 'Oswald', sans-serif;
+        }
+
+            .div2:hover {
+                -webkit-filter: blur(2px);
+                filter: blur(2px);
+            }
+
+        .div11 {
+            display: none;
+        }
+
+        .div111 {
+            display: none;
+        }
+
+        .blogTwo {
+            display: inline-block;
+            margin-top: 50px;
+            border: 1px solid black;
+        }
+
+
+
+        .blogTwoo {
+            display: none;
+        }
+
+        .div22 {
+            display: none;
+        }
+
+        .div222 {
+            display: none;
+        }
+
+        .contain2 {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 1380px) {
+            .paragraphContainer {
+                margin-left: 10% !important;
+                margin-right: 2% !important;
+            }
+
+            .ul {
+                font-size: 1.4em;
+            }
+
+            .float {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .titleContainer {
+                top: 200px !important;
+            }
+
+            .paragraphContainer {
+                margin-left: 10% !important;
+                margin-right: 2% !important;
+            }
+        }
+
+        @media screen and (max-width: 531px) {
+            .color {
+                display: inline-block;
+                background: transparent;
+                margin-right: 30px;
+                border-bottom-right-radius: 8px;
+                float: right;
+            }
+
+            .nav2 {
+                margin-left: 30px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            #imgc {
+                margin-left: 35vw;
+                margin-top: 0px;
+                display: inline-block;
+            }
+        }
+
+        @media screen and (max-width: 1700px) {
+            .blogOne {
+                display: none;
+            }
+
+            .div1 {
+                display: none;
+            }
+
+            .div2 {
+                display: none;
+            }
+
+            .div111 {
+                display: inline-block;
+                font-size: 1vw;
+                color: black;
+                font-family: 'Oswald', sans-serif;
+            }
+
+                .div111:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .div11 {
+                display: none;
+            }
+
+            .blogOone {
+                display: none;
+            }
+
+            .blogTwo {
+                display: none;
+            }
+
+            .blogthre {
+                display: inline-block;
+                margin-top: 50px;
+                border: 1px solid lightgrey;
+            }
+
+                .blogthre:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .blogothre {
+                display: inline-block;
+                margin-top: 50px;
+            }
+
+                .blogothre:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .blogThree {
+                display: inline-block;
+                margin-top: 50px;
+            }
+
+                .blogThree:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .div222 {
+                display: inline-block;
+                margin-left: 3.5vw;
+                font-size: 1vw;
+                color: black;
+                font-family: 'Oswald', sans-serif;
+            }
+
+                .div222:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+        }
+
+        .div22 {
+            display: none;
+        }
+
+        }
+
+        @media screen and (max-width: 1400px) {
+
+
+            .center2 {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+
+            .center {
+                display: none;
+            }
+
+            .center3 {
+                display: none;
+            }
+
+            .horizontal {
+                width: 900px;
+            }
+        }
+
+        @media screen and (max-width: 960px) {
+            .center3 {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 25px;
+            }
+
+            .center {
+                display: none;
+            }
+
+            .center2 {
+                display: none;
+            }
+
+            .horizontal {
+                width: 670px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .blogOne {
+                display: none;
+            }
+
+            .blogthre {
+                display: none;
+            }
+
+            .blogOone {
+                display: none;
+            }
+
+            .blogothre {
+                display: none;
+            }
+
+            .blogThree {
+                display: none;
+            }
+
+            .blogTwo {
+                display: none;
+            }
+
+            .blogOnee {
+                display: inline-block;
+                margin-top: 50px;
+                border: 1px solid lightgrey;
+            }
+
+                .blogOnee:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .blogOonee {
+                display: inline-block;
+                margin-top: 50px;
+            }
+
+                .blogOonee:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .blogTwoo {
+                display: inline-block;
+                margin-top: 50px;
+            }
+
+                .blogTwoo:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .div222 {
+                display: none;
+            }
+
+            .div22 {
+                display: inline-block;
+                margin-left: 3.5vw;
+                font-size: 1vw;
+                color: black;
+                font-family: 'Oswald', sans-serif;
+            }
+
+                .div22:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .div11 {
+                display: inline-block;
+                font-size: 1vw;
+                color: black;
+                font-family: 'Oswald', sans-serif;
+            }
+
+                .div11:hover {
+                    -webkit-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+            .div2 {
+                display: none;
+            }
+
+            .div1 {
+                display: none;
+            }
+
+            .div111 {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function about() {
+            document.getElementById('aboutSection').scrollIntoView();
+            // will scroll to 4th h3 element
+        }
+        function services() {
+            document.getElementById('servicesSection').scrollIntoView();
+            // will scroll to 4th h3 element
+        }
+    </script>
+</head>
+<body>
+    <section id="imageSection">
+        <div class="titleContainer">
+            <div class="title"><img src="https://www.dawkinspgh.com/golddawkin.PNG" height="98" width="98" /></div>
+            <br />
+            <div class="title2">TRANSFORMING THE WAY YOU OPTIMIZE YOUR DATA.</div>
+        </div>
+    </section>
+    <section id="navSection">
+        <a class="navLink" href="https://www.dawkinspgh.com/">Home</a><a class="navLink4" href="https://www.dawkinspgh.com/" >About</a><a class="navLink4" href="https://www.dawkinspgh.com/" >Services</a><a class="navLink5" href="https://www.dawkinspgh.com/blog.html">Blog</a><a class="navLink4" href="https://www.dawkinspgh.com/dashboard.html">Sign in</a><div id="logo"><img src="dawkinslogo.png" height="33" width="33" /></div>
+
+    </section>
+    <section id="aboutSection">
+        <div class="blogs"><br /><b><i>Blogs</i></b></div>
+        <div class="contain2">
+            </br>
+            <a href="https://www.dawkinspgh.com/Dawkins-1st.pdf" target="_blank"><div class="div1"><img src="https://www.dawkinspgh.com/Blog-1.png" alt="image" height="185px" width="185px" class="blogOne" /><br /><br /><b style="color:white">3rd Party cookies <br />ending in 2023</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins-1st.pdf" target="_blank"><div class="div11"><img src="https://www.dawkinspgh.com/Blog-1.png" alt="image" height="60px" width="60px" class="blogOnee" /><br /><br /><b style="color:white">3rd Party cookies <br />ending in 2023</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins-1st.pdf" target="_blank"><div class="div111"><img src="https://www.dawkinspgh.com/Blog-1.png" alt="image" height="135px" width="135px" class="blogthre" /><br /><br /><b style="color:white">3rd Party cookies <br />ending in 2023</b></div></a>
+
+            <a href="https://www.dawkinspgh.com/Dawkins2nd.pdf" target="_blank"><div class="div2"><img src="https://www.dawkinspgh.com/blog_2_cover.png" alt="image" height="185px" width="185px" class="blogTwo" /><br /><br /><b style="color:white">Optimizing social<br /> media to collect data</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins2nd.pdf" target="_blank"><div class="div22"><img src="https://www.dawkinspgh.com/blog_2_cover.png" alt="image" height="60px" width="60px" class="blogTwoo" /><br /><br /><b style="color:white">Optimizing social<br /> media to collect data</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins2nd.pdf" " target="_blank"><div class="div222"><img src="https://www.dawkinspgh.com/blog_2_cover.png" alt="image" height="135px" width="135px" class="blogThree" /><br /><br /><b style="color:white">Optimizing social<br /> media to collect data</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins3rd.pdf" " target="_blank"><div class="div2"><img src="https://www.dawkinspgh.com/blog_album_cover_3.png" alt="image" height="185px" width="185px" class="blogTwo" /><br /><br /><b style="color:white">Big Data doesn't<br /> care about to you</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins3rd.pdf" target="_blank"><div class="div22"><img src="https://www.dawkinspgh.com/blog_album_cover_3.png" alt="image" height="60px" width="60px" class="blogTwoo" /><br /><br /><b style="color:white">Big Data doesn't<br /> care about to you</b></div></a>
+            <a href="https://www.dawkinspgh.com/Dawkins3rd.pdf" target="_blank"><div class="div222"><img src="https://www.dawkinspgh.com/blog_album_cover_3.png" alt="image" height="135px" width="135px" class="blogThree" /><br /><br /><b style="color:white">Big Data doesn't<br /> care about to you</b></div></a>
+            <!-- <a href="https://youtu.be/HCFqSCNI18E" target="_blank"><div class="div2"><img src="podcast4.png" alt="image" height="185px" width="185px" class="blogTwo" /><br /><br /><b>01.10.21</b></div></a>
+     <a href="https://youtu.be/HCFqSCNI18E" target="_blank"><div class="div22"><img src="podcast4.png" alt="image" height="60px" width="60px" class="blogTwoo" /><br /><br /><b>01.10.21</b></div></a>
+     <a href="https://youtu.be/HCFqSCNI18E" target="_blank"><div class="div222"><img src="podcast4.png" alt="image" height="135px" width="135px" class="blogThree" /><br /><br /><b>01.10.21</b></div></a>
+     <a href="https://www.youtube.com/watch?v=MW3PbvpCdoc" target="_blank"><div class="div2"><img src="podcast5.png" alt="image" height="185px" width="185px" class="blogTwo" /><br /><br /><b>01.14.21</b></div></a>
+     <a href="https://www.youtube.com/watch?v=MW3PbvpCdoc" target="_blank"><div class="div22"><img src="podcast5.png" alt="image" height="60px" width="60px" class="blogTwoo" /><br /><br /><b>01.14.21</b></div></a>
+     <a href="https://www.youtube.com/watch?v=MW3PbvpCdoc" target="_blank"><div class="div222"><img src="podcast5.png" alt="image" height="135px" width="135px" class="blogThree" /><br /><br /><b>01.14.21</b></div></a>-->
+        </div>
+    </section>
+    
+    <section id="dawkins">
+        <div class="navLink3">@Dawkins 2022</div>
+
+    </section>
+</body>
+</html>

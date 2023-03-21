@@ -1,0 +1,903 @@
+﻿<html >
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <title></title>
+    <style>
+        body {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('dawkinsbg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .form {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 25%;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+        }
+
+        .submit1 {
+            background-color: black;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 25%;
+            margin-top: 300px;
+            text-align: center;
+            width: 100%;
+        }
+            .submit1:hover {
+                opacity: .5;
+            }
+
+        .buttonClass {
+            background-color: white;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: black;
+            /*color: #eee;*/
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 5px 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+            .buttonClass:hover {
+                opacity: .5;
+            }
+
+        .title {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        .title2 {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        .form2 {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 25%;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+            display: none;
+        }
+
+        .form3 {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 10%;
+            padding: 20px;
+            padding-top: 40px;
+            width: 320px;
+            display: none;
+        }
+
+        #form {
+            display: none;
+        }
+
+        .input {
+            background-color: #303245;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            font-size: 18px;
+            height: 25%;
+            outline: 0;
+            padding: 4px 20px 0;
+            width: 100%;
+        }
+
+        .submit {
+            background-color: black;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 25%;
+            margin-top: 38px;
+            text-align: center;
+            width: 100%;
+        }
+            .submit:hover {
+                opacity: .5;
+            }
+
+        .subtitle {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        #myChart {
+            display: none;
+            margin-top: 1vh;
+        }
+
+        .chart {
+            display: none;
+        }
+
+        #navHolder {
+            display: none;
+        }
+
+        #buttonss {
+            display: none;
+        }
+
+        #wrong {
+            display: none;
+        }
+
+        #navHolder {
+            text-align: center;
+        }
+
+        .nav {
+            display: inline-block;
+            text-align: center;
+            font-size:1.4em;
+            color: grey;
+            margin-right: 18px;
+        }
+            .nav:hover {
+                /*background-color: lightcyan;*/
+                cursor: pointer;
+                color:white;
+            }
+
+        .nav2 {
+            display: inline-block;
+            text-align: center;
+            font-size: 1.4em;
+            color: grey;
+            /*background-color: white;*/
+        }
+            .nav2:hover {
+                /*background-color: lightcyan;*/
+                color: white;
+                cursor: pointer;
+            }
+
+        #nav {
+           /* background-image: url('codedawkin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background-color: black;
+            width: 100%;
+            height: 9.5vh;
+            display: none;
+            position: absolute;
+            top: 0px;
+            padding-top: 2vh;
+        }
+        #img {
+            text-align: center;
+            margin-top: 1.5vh;
+            margin-right: .4%;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <section id="nav">
+        <div id="navHolder">
+
+            <div id="refer" class="nav">Referrer</div>
+            <div id="return" class="nav">Returning</div>
+            <div id="page" class="nav">Page</div>
+            <div id="clicks" class="nav">Company</div>
+            <div id="button" class="nav">Buttons</div>
+            <div id="locations" class="nav2">Locations</div>
+
+        </div>
+        <div id="img"><img height="50" width="50" src="golddawkin.png" /></div>
+    </section>
+    <section>
+
+        <div id="chart_div" class="chart"></div>
+
+        <div id="chart_div2" class="chart"></div>
+
+        <div id="chart_div3" class="chart"></div>
+
+        <div id="chart_div4" class="chart"></div>
+
+        <div id="chart_div5" class="chart"></div>
+
+        <div id="chart_div6" class="chart"></div>
+
+        <form class="form" id="start" onsubmit="return false">
+            <label class="title">Click to See Your Dawkins Data !</label>
+            <br />
+
+            <input style="width:80%; margin-top: 10%" type="submit" class="submit1" value="Next" onclick="starter();" />
+        </form>
+
+        <form class="form3" id="wrong" onsubmit="return false">
+            <label class="title2">Wrong Password :( Please refresh and try again</label>
+        </form>
+
+        <form class="form" id="form" onsubmit="return false">
+            <label class="subtitle">Enter your password:</label>
+            <br />
+            <input style="width:80%; margin-top: 5%" type="text" id="userInput" class="input" value="" /><br />
+            <input style="width:80%; margin-top: 5%" id="ages" type="submit" class="submit" value="Next" />
+        </form>
+
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <div id="buttonss" style="text-align: center; position: absolute; bottom: 50px;"></div>
+    </section>
+
+    <script type="text/javascript">
+        var buttons = [];
+        var buttonsArr = [];
+        var number;
+        var sqltable;
+        var ms = 600000000;
+        var tableName = "";
+        var comparer = "";
+        var char = "";
+        var input;
+
+        document.getElementById("refer").addEventListener("click", function () {
+
+            //console.log(char);
+            $('#chart_div').show();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+
+
+        });
+
+        document.getElementById("return").addEventListener("click", function () {
+
+            //console.log(char);
+            $('#chart_div').hide();
+            $('#chart_div2').show();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+
+
+        });
+
+        document.getElementById("page").addEventListener("click", function () {
+
+            //console.log(char);
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').show();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+
+
+        });
+
+        document.getElementById("clicks").addEventListener("click", function () {
+
+            //console.log(char);
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').show();
+            $('#chart_div5').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+
+
+        });
+
+        document.getElementById("locations").addEventListener("click", function () {
+
+            //console.log(char);
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div6').hide();
+            $('#buttonss').hide();
+            $('#chart_div5').show();
+
+
+        });
+
+        document.getElementById("button").addEventListener("click", function () {
+
+            //console.log(char);
+            $('#chart_div').hide();
+            $('#chart_div2').hide();
+            $('#chart_div3').hide();
+            $('#chart_div4').hide();
+            $('#chart_div5').hide();
+            $('#chart_div6').show();
+            $('#buttonss').show();
+            showButtons(buttons);
+
+
+        });
+
+
+        document.getElementById("ages").addEventListener("click", function () {
+            input = $('#userInput');
+            char = input.val();
+            compare(char);
+
+        });
+
+        function starter() {
+            $('#start').hide();
+            $('#form').show();
+        }
+
+
+
+        function compare(char) {
+
+            //console.log(test);
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getTable.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [char, 1] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        tableName = obj.result;
+                        table = tableName.split(" ");
+                        table1 = table[0];
+                        table2 = table[1];
+                        compareUsbuttons(table2);
+                        compareUs(table1);
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+
+
+
+        }
+
+       
+
+        function compareUsbuttons(table) {
+            if (table == "error") {
+                //reshow the password type in
+            }
+
+
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getData2.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [table, 2] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        comparer = obj.result;
+                        console.log(comparer);
+                        if (comparer != null) {
+                            treat(comparer)
+                        }
+                        //call next function here
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+        }
+
+        function compareUs(table) {
+            if (table == "error") {
+                //reshow the password type in
+            }
+
+
+            $.ajax({
+                type: "POST",
+                url: 'https://sqlphpwebapptry.azurewebsites.net/getData.php',
+                dataType: 'json',
+                data: { functionname: 'compare', arguments: [table, 2] },
+
+                success: function (obj, textstatus) {
+                    if (!('error' in obj)) {
+                        comparer = obj.result;
+                        console.log(comparer);
+                        if (comparer != null) {
+                            showAll(comparer);
+                        }
+                        //call next function here
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+        }
+
+
+        function initArrayString(array) {
+            var array = [];
+            for (let i = 0; i < array + 1; i++) {
+                array.push('')
+            }
+            return array;
+        }
+        function initArrayNum(array) {
+            var arrays = [];
+            for (let i = 0; i < array + 1; i++) {
+                arrays.push(0);
+            }
+            return arrays;
+        }
+
+        function locationTime(arrayLength, location) {
+
+            var locationsNum = initArrayNum(arrayLength);
+            var locations = ['art'];
+
+            for (let j = 0; j < location.length; j++) {
+                for (let i = 0; i < locations.length; i++) {
+                    if (location[j][1] == locations[i]) {
+                        locationsNum[i] = locationsNum[i] + 1;
+                        break;
+                    } else if (i == locations.length - 1) {
+                        if (locations[0] == 'art') {
+                            locations[0] = location[j][1];
+                            locationsNum[0] = locationsNum[0] + 1;
+                        } else {
+                            locations.push(location[j][1]);
+                        }
+                    } else {
+                        continue
+                    }
+                }
+            }
+
+            var arr = [locations, locationsNum];
+
+            return arr;
+
+        }
+
+        function ButtonslocationTime(arrayLength, location) {
+
+            var locationsNum = initArrayNum(arrayLength);
+            var locations = ['art'];
+
+            for (let j = 0; j < location.length; j++) {
+                for (let i = 0; i < locations.length; i++) {
+                    if (location[j][1] == locations[i]) {
+                        locationsNum[i] = locationsNum[i] + 1;
+                        break;
+                    } else if (i == locations.length - 1) {
+                        if (locations[0] == 'art') {
+                            locations[0] = location[j][1];
+                            locationsNum[0] = locationsNum[0] + 1;
+                        } else {
+                            locations.push(location[j][1]);
+                        }
+                    } else {
+                        continue
+                    }
+                }
+            }
+
+            var arr = [locations, locationsNum];
+
+            return arr;
+
+        }
+
+
+        function makeArray(array) {
+            var arr = [];
+            for (let i = 0; i < array[0].length; i++) {
+                var arrTemp = [array[0][i], array[1][i]];
+                arr.push(arrTemp);
+            }
+            return arr;
+        }
+
+        function removeNull(array) {
+            console.log(array);
+            for (let i = 0; i < array.length; i++) {
+                if (array[i][0] == null || array[i][0] == "  " || array[i][0] == " " || array[i][0] == "") {
+                    array[i][0] = "No Reference";
+                    return array;
+                }
+            }
+            return array;
+        }
+
+        function treat(treat) {
+            var array = [];
+            for (let i = 0; i < treat[0].length; i++) {
+                if (i == 0) {
+                    array[0] = treat[0][i];
+                } else {
+                    for (let j = 0; j < array.length; j++) {
+                        if (array[j] == treat[0][i]) {
+                            break;
+                        } else if (j == array.length - 1) {
+                            array.push(treat[0][i]);
+                        }
+                    }
+                }
+            }
+
+            var arrAll = [];
+            console.log(treat)
+
+            for (let i = 0; i < array.length; i++) {
+                var p = [];
+                var ptry = 0;
+                for (let j = 0; j < treat[0].length; j++) {
+                    if (treat[0][j] == array[i]) {
+                        var me = [];
+                        ptry = ptry + 1;
+                        me[0] = treat[0][j];
+                        me[1] = treat[1][j];
+                        p.push(me);
+                    }
+                }
+                arrAll.push(locationTime(ptry, p));
+            }
+
+            var arrtemp = [];
+            buttons = array;
+            console.log(buttons);
+            arrtemp.push(array);
+            console.log(array);
+            arrtemp.push(arrAll);
+            console.log(arrAll);
+            buttonsArr = arrtemp;
+            button(buttons[0]);
+        }
+
+        function showButtons(buttons) {
+            var string = "";
+            console.log(buttons);
+            for (let i = 0; i < buttons.length; i++) {
+                console.log(buttons[i]);
+                percent = 100 / buttons.length;
+                string = string + "<button id='" + buttons[i] + "' onClick='button(this.id)' class='buttonClass'>" + buttons[i] + "</button>";
+               
+
+                
+            }
+            document.getElementById('buttonss').innerHTML = string //buttons code
+            
+
+
+
+        }
+
+        function shorten(array) {
+            var arrayNew = [];
+            for (let i = 0; i < array[0].length; i++) {
+                arrayNew[i] = array[1][i];
+            }
+            array[1] = arrayNew;
+            return array;
+        }
+
+        function button(arr) {
+            for (let i = 0; i < buttonsArr[0].length; i++) {
+
+                if (buttonsArr[0][i] == arr) {
+                    var me = shorten(buttonsArr[1][i]);
+                    console.log(me);
+                    me = makeArray(me);
+
+                    google.charts.setOnLoadCallback(drawChart7(me));
+                    let btns = document.querySelectorAll('button');
+
+                    for (j of btns) {
+                        document.getElementById(j.id).style.backgroundColor = "white";
+                        document.getElementById(j.id).style.color = "black";
+                    }
+                    document.getElementById(arr).style.backgroundColor = "black";
+                    document.getElementById(arr).style.color = "white";
+                            
+                        
+                    
+                }
+            }
+        }
+
+        function showAll(comp) {
+
+            var soon = 0;
+            var visits = [];
+            var refer = [];
+            var page = [];
+            var location = [];
+            var p = [];
+            var locTry = 0;
+            var refTry = 0;
+            var pageTry = 0;
+            var ptry = 0;
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                me[0] = comp[0][i];
+                me[1] = parseInt(comp[2][i]);
+                visits[i] = me;
+            }
+
+            visits = removeNull(visits);
+            google.charts.setOnLoadCallback(drawChart2(visits));
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                locTry = locTry + 1;
+                me[0] = comp[0][i];
+                me[1] = comp[1][i];
+                location[i] = me;
+            }
+
+            var locations = locationTime(locTry, location);
+            locations = makeArray(locations);
+            locations = removeNull(locations);
+            google.charts.setOnLoadCallback(drawChart5(locations));
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                ptry = ptry + 1;
+                me[0] = comp[0][i];
+                me[1] = comp[4][i];
+                p[i] = me;
+            }
+
+            var ps = locationTime(ptry, p);
+            ps = makeArray(ps);
+            ps = removeNull(ps);
+            google.charts.setOnLoadCallback(drawChart4(ps));
+
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                refTry = refTry + 1;
+                me[0] = comp[0][i];
+                var splitter = comp[3][i].split('referrer: ');
+                me[1] = splitter[1];
+                refer[i] = me;
+            }
+
+            var referrer = locationTime(refTry, refer);
+            referrer = makeArray(referrer);
+            referrer = removeNull(referrer);
+            google.charts.setOnLoadCallback(drawChart(referrer));
+
+            for (let i = 0; i < comp[0].length; i++) {
+                var me = [];
+                me[0] = comp[0][i];
+                pageTry = pageTry + 1;
+                var splitter = comp[3][i].split('Buttons: ');
+                splitter = splitter[0];
+                splitter = splitter.split('Name: ');
+                me[1] = splitter[1];
+                page[i] = me;
+            }
+
+            var pages = locationTime(pageTry, page);
+            pages = makeArray(pages);
+            pages = removeNull(pages);
+            google.charts.setOnLoadCallback(drawChart3(pages))
+
+            $('#navHolder').show();
+            $('#nav').show();
+            $('#chart_div').show();
+            $('#start').hide();
+            $('#wrong').hide();
+            $('#form').hide();
+
+        }
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+
+
+
+        google.charts.setOnLoadCallback(drawChart4);
+
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart(refer) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Referrer');
+            data.addColumn('number', 'Uses');
+            data.addRows(refer);
+
+            // Set chart options
+            var options = {
+                'title': 'Most used Referrers',
+                'hAxis': { title: 'Refererrer', titleTextStyle: { color: 'black' } },
+                'width': 900,
+                'height': 700,
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+
+        function drawChart2(visits) {
+
+            console.log(visits);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Visitor');
+            data.addColumn('number', 'Returning Visits');
+
+            data.addRows(visits);
+
+            // Set chart options
+            var options = {
+                'title': 'Returning Vistors (BY IP)',
+                'width': 900,
+                'height': 700,
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+        }
+
+        function drawChart7(visits) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Buttons');
+            data.addColumn('number', 'Clicks');
+
+            data.addRows(visits);
+
+            // Set chart options
+            var options = {
+                'title': 'Buttons Clicks',
+                'width': 900,
+                'height': 700,
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div6'));
+            chart.draw(data, options);
+        }
+
+        function drawChart3(pages) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Page', 'black');
+            data.addColumn('number', 'Visits', 'black');
+            data.addRows(pages);
+
+            // Set chart options
+            var options = {
+                'title': 'Most Popular Page',
+                'width': 900,
+                'height': 700,
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div3'));
+            chart.draw(data, options);
+        }
+
+        function drawChart4(ps) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Company');
+            data.addColumn('number', 'Amount');
+            data.addRows(ps);
+
+            // Set chart options
+            var options = {
+                'title': 'Name of Company',
+                'width': 900,
+                'height': 700,
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div4'));
+            chart.draw(data, options);
+        }
+
+        function drawChart5(locate) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Location');
+            data.addColumn('number', 'Vistiors');
+            data.addRows(locate);
+
+            // Set chart options
+            var options = {
+                'title': 'Most popular location of your visitor',
+                'width': 900,
+                'height': 700,
+                'series': [{ color: 'black', visibleInLegend: true }, { color: 'black', visibleInLegend: false }]
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div5'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
